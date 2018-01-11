@@ -1,16 +1,17 @@
 module.exports = {
     siteMetadata: {
-        title: "Tom's corner of the internet",
-        description: "",
-        author: "Tom Forbes",
-        siteUrl: 'https://tomforb.es'
+        title: "Toms corner of the internet",
+        author: 'Tom Forbes',
+        description: 'Hello!',
+        siteUrl: 'https://tomforb.es',
     },
+    pathPrefix: '/gatsby-starter-blog',
     plugins: [
         {
-            resolve: 'gatsby-source-filesystem',
+            resolve: `gatsby-source-filesystem`,
             options: {
                 path: `${__dirname}/src/pages`,
-                name: "pages",
+                name: 'pages',
             },
         },
         {
@@ -29,9 +30,9 @@ module.exports = {
                             wrapperStyle: `margin-bottom: 1.0725rem`,
                         },
                     },
-                    "gatsby-remark-prismjs",
-                    "gatsby-remark-copy-linked-files",
-                    "gatsby-remark-smartypants",
+                    'gatsby-remark-prismjs',
+                    'gatsby-remark-copy-linked-files',
+                    'gatsby-remark-smartypants',
                 ],
             },
         },
@@ -43,60 +44,13 @@ module.exports = {
                 trackingId: `UA-48915373-1`,
             },
         },
+        `gatsby-plugin-feed`,
         `gatsby-plugin-offline`,
         `gatsby-plugin-react-helmet`,
-        'gatsby-plugin-catch-links',
         {
-            resolve: `gatsby-plugin-feed`,
+            resolve: 'gatsby-plugin-typography',
             options: {
-                query: `
-                {
-                  site {
-                    siteMetadata {
-                      title
-                      description
-                      siteUrl
-                      site_url: siteUrl
-                    }
-                  }
-                }
-              `,
-                feeds: [
-                    {
-                        serialize: ({query: {site, allMarkdownRemark}}) => {
-                            return allMarkdownRemark.edges.map(edge => {
-                                return Object.assign({}, edge.node.frontmatter, {
-                                    description: edge.node.excerpt,
-                                    url: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
-                                    guid: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
-                                    custom_elements: [{"content:encoded": edge.node.html}],
-                                })
-                            })
-                        },
-                        query: `
-                        {
-                          allMarkdownRemark(
-                            limit: 1000,
-                            sort: { order: DESC, fields: [frontmatter___date] },
-                            filter: {frontmatter: { draft: { ne: true } }}
-                          ) {
-                            edges {
-                              node {
-                                excerpt
-                                html
-                                frontmatter {
-                                  title
-                                  date
-                                  path
-                                }
-                              }
-                            }
-                          }
-                        }
-                      `,
-                        output: "/rss.xml",
-                    },
-                ],
+                pathToConfigModule: 'src/utils/typography',
             },
         },
         `gatsby-plugin-netlify`,
@@ -109,6 +63,7 @@ module.exports = {
                 showSpinner: false,
             },
         },
-        `gatsby-plugin-sitemap`
+        `gatsby-plugin-sitemap`,
+        'gatsby-plugin-catch-links'
     ],
 }

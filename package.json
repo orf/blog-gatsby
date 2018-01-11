@@ -1,46 +1,49 @@
 {
-  "name": "gatsby-starter-blog-no-styles",
-  "description": "Starter Gatsby Blog No Styles",
+  "name": "gatsby-starter-blog",
+  "description": "Starter Gatsby Blog",
   "version": "1.0.0",
-  "author": "Noah Glusenkamp <noah.glusenkamp@gmail.com>",
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby-starter-blog/issues"
   },
   "dependencies": {
-    "eslint": "^4.15.0",
-    "gatsby": "^1.8.12",
-    "gatsby-link": "^1.6.8",
+    "gatsby": "^1.9.151",
+    "gatsby-link": "^1.6.34",
     "gatsby-plugin-catch-links": "^1.0.14",
     "gatsby-plugin-feed": "^1.3.15",
-    "gatsby-plugin-google-analytics": "^1.0.4",
-    "gatsby-plugin-manifest": "^1.0.4",
-    "gatsby-plugin-netlify": "^1.0.12",
+    "gatsby-plugin-google-analytics": "^1.0.15",
+    "gatsby-plugin-manifest": "^1.0.12",
+    "gatsby-plugin-netlify": "^1.0.13",
     "gatsby-plugin-nprogress": "^1.0.9",
-    "gatsby-plugin-offline": "^1.0.4",
-    "gatsby-plugin-preact": "^1.0.3",
-    "gatsby-plugin-react-helmet": "^1.0.3",
-    "gatsby-plugin-sharp": "^1.6.2",
+    "gatsby-plugin-offline": "^1.0.12",
+    "gatsby-plugin-react-helmet": "^1.0.8",
+    "gatsby-plugin-sharp": "^1.6.24",
     "gatsby-plugin-sitemap": "^1.2.9",
-    "gatsby-remark-copy-linked-files": "^1.5.2",
-    "gatsby-remark-images": "^1.5.4",
-    "gatsby-remark-prismjs": "^1.2.1",
-    "gatsby-remark-responsive-iframe": "^1.4.3",
-    "gatsby-remark-smartypants": "^1.4.3",
-    "gatsby-source-filesystem": "^1.4.3",
-    "gatsby-transformer-remark": "^1.7.1",
-    "gatsby-transformer-sharp": "^1.6.1",
-    "lodash": "^4.15.0"
+    "gatsby-plugin-typography": "^1.7.10",
+    "gatsby-remark-copy-linked-files": "^1.5.25",
+    "gatsby-remark-images": "^1.5.36",
+    "gatsby-remark-prismjs": "^1.2.11",
+    "gatsby-remark-responsive-iframe": "^1.4.16",
+    "gatsby-remark-smartypants": "^1.4.10",
+    "gatsby-source-filesystem": "^1.5.11",
+    "gatsby-transformer-remark": "^1.7.27",
+    "gatsby-transformer-sharp": "^1.6.16",
+    "lodash": "^4.17.4",
+    "react-responsive-grid": "^0.3.4",
+    "typography-theme-us-web-design-standards": "^0.16.9"
   },
   "devDependencies": {
-    "babel-core": "^6.0.0",
-    "babel-preset-env": "^1.0.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.15.0",
     "eslint-plugin-babel": "^4.1.2",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.5.1",
-    "prettier": "^1.6.1"
+    "gh-pages": "^1.1.0",
+    "prettier": "^1.10.1"
   },
-  "homepage": "https://github.com/noahg/gatsby-starter-blog-no-styles#readme",
+  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
   "keywords": [
     "gatsby"
   ],
@@ -48,14 +51,16 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/noahg/gatsby-starter-blog-no-styles.git"
+    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
   },
   "scripts": {
     "dev": "gatsby develop",
     "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md'",
     "develop": "gatsby develop",
     "build": "gatsby build",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js"
   }
 }
