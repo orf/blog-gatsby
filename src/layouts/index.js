@@ -4,6 +4,8 @@ import { Container } from 'react-responsive-grid'
 
 import { rhythm, scale } from '../utils/typography'
 
+import "prismjs/themes/prism-tomorrow.css"
+
 class Template extends React.Component {
   render() {
     const { location, children } = this.props
