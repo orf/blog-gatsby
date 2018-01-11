@@ -29,6 +29,7 @@
     "gatsby-transformer-remark": "^1.7.27",
     "gatsby-transformer-sharp": "^1.6.16",
     "lodash": "^4.17.4",
+    "react-gravatar": "^2.6.3",
     "react-responsive-grid": "^0.3.4",
     "typography-theme-us-web-design-standards": "^0.16.9"
   },
@@ -40,6 +41,7 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.5.1",
+    "gatsby-plugin-remove-trailing-slashes": "^1.0.3",
     "gh-pages": "^1.1.0",
     "prettier": "^1.10.1"
   },
