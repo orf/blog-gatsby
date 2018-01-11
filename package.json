@@ -30,6 +30,7 @@
     "gatsby-transformer-sharp": "^1.6.16",
     "lodash": "^4.17.4",
     "react-gravatar": "^2.6.3",
+    "react-helmet": "^5.2.0",
     "react-responsive-grid": "^0.3.4",
     "typography-theme-us-web-design-standards": "^0.16.9"
   },
