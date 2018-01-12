@@ -12,16 +12,16 @@ The author of the post argues that ORM's are bad because of [impedance mismatch]
 
 ### Security ###
 Security is a big issue when it comes to web applications. Injection related vulnerabilities rank #1 on the [OWASP top 10 list](http://www.applicure.com/blog/owasp-top-10-2010) which means they consider it the most critical flaw and its easy to see why - they are so common and can do a lot of damage to improperly configured systems. These vulnerabilities usually happen when un-sanitized data is inserted blindly into SQL queries:
-~~~~{.prettyprint}
+~~~~{sql}
 executeQuery("SELECT * FROM users WHERE user_id = " . $_GET["target_id"])
 ~~~~
 Because the user data (in this case in the WHERE condition) is not escaped or sanitized a malicious user could easily inject malicious SQL into the query to alter the query logic and return another users account.
 
 Using an ORM protects you against that by automatically separating the data from the query. Running the following statement using SQLAlchemy yields the SQL below:
-~~~~{.prettyprint}
+~~~~{sql}
 Session.query(Users).filter_by(id=10).one()
 ~~~~
-~~~~{.prettyprint}
+~~~~{sql}
 SELECT mytable.id AS mytable_id 
 FROM mytable 
 WHERE mytable.id = ?
@@ -33,11 +33,11 @@ The data (in this case 10) is sent after this, and the "?" character tells the d
 ORM's are an abstraction layer, and like most abstractions they add overhead, however they can also make database queries more efficient.
 
 Imagine a simple table with an ID column and a text column. If a developer wished to query the text column using a case insensitive ILIKE query:
-~~~~{.prettyprint}
+~~~~{sql}
 SELECT * FROM my_table WHERE text_column ILIKE myinput%
 ~~~~
 This seems like the right thing to do - ILIKE is the same as LIKE except its case insensitive. *Wrong*. On PostgreSQL (and other databases) using ILIKE is not as efficient as the following statement which can utilize an index instead of performing a full table scan:
-~~~~{.prettyprint}
+~~~~{sql}
 SELECT * FROM my_table WHERE lower(text_column) LIKE lower(myinput%)
 ~~~~
 
@@ -47,7 +47,7 @@ SQLAlchemy automatically does this for you when you use the ILIKE function. Beca
 ### Queries as objects ###
 When you start treating queries as objects you can do some interesting things. In my film recommendation site the user can choose to filter their recommendations based on a few criteria (director, IMDB score etc). If the user doesn't specify a search query for a certain criteria then that condition is not added to the query:
 
-~~~~{.prettyprint}
+~~~~{sql}
 rec_query = db.session.query(Movie.imdb_id).filter(Movie.imdb_id.in_(id_counters.keys()))
 if filter_imdb_score > 0:
     rec_query = rec_query.filter(Movie.imdb_score >= filter_imdb_score)
@@ -60,8 +60,8 @@ Its as simple as that. Without using an ORM (or some other form of query-as-an-o
 ### Migrations ###
 Some people argue (as the author points out) that ORM's make migrations hard. I disagree, it couldn't be simpler:
 
-~~~~
-$ ./manage.py schemamigration myapp --auto && ./manage.py migrate myapp
+~~~~{bash}
+./manage.py schemamigration myapp --auto && ./manage.py migrate myapp
 ~~~~
 
 This example uses the [South library](http://south.aeracode.org/docs) to handle the migrations for you (there is a library available for SQLAlchemy as well but I have not used it). Its as simple as editing your Django model to add, remove, rename or otherwise alter a field definition and then run the commands above (substituting myapp for your django application) and you are done - the database schema is updated to reflect the changes and South keeps track of what version of the schema you are using. It also supports [migrating the actual data](http://south.aeracode.org/docs/tutorial/part3.html) when you are doing more advanced migrations.

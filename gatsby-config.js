@@ -19,6 +19,19 @@ module.exports = {
             options: {
                 plugins: [
                     {
+                        resolve: 'gatsby-remark-copy-linked-files',
+                        options: {
+                            destinationDir: 'posts-static/',
+                        }
+                    },
+                    {
+                        resolve: `gatsby-remark-sequence`,
+                        options: {
+                            // see more details on https://github.com/bramp/js-sequence-diagrams
+                            'theme': 'hand',
+                        }
+                    },
+                    {
                         resolve: `gatsby-remark-images`,
                         options: {
                             maxWidth: 590,
@@ -33,6 +46,7 @@ module.exports = {
                     'gatsby-remark-prismjs',
                     'gatsby-remark-copy-linked-files',
                     'gatsby-remark-smartypants',
+                    `gatsby-remark-autolink-headers`,
                 ],
             },
         },
@@ -45,6 +59,7 @@ module.exports = {
             },
         },
         `gatsby-plugin-feed`,
+        `gatsby-plugin-manifest`,
         `gatsby-plugin-offline`,
         `gatsby-plugin-react-helmet`,
         {
@@ -66,5 +81,6 @@ module.exports = {
         `gatsby-plugin-sitemap`,
         'gatsby-plugin-catch-links',
         `gatsby-plugin-remove-trailing-slashes`,
+        `gatsby-plugin-nprogress`,
     ],
 }
