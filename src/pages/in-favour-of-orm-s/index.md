@@ -12,13 +12,13 @@ The author of the post argues that ORM's are bad because of [impedance mismatch]
 
 ### Security ###
 Security is a big issue when it comes to web applications. Injection related vulnerabilities rank #1 on the [OWASP top 10 list](http://www.applicure.com/blog/owasp-top-10-2010) which means they consider it the most critical flaw and its easy to see why - they are so common and can do a lot of damage to improperly configured systems. These vulnerabilities usually happen when un-sanitized data is inserted blindly into SQL queries:
-~~~~{sql}
+~~~~{php}
 executeQuery("SELECT * FROM users WHERE user_id = " . $_GET["target_id"])
 ~~~~
 Because the user data (in this case in the WHERE condition) is not escaped or sanitized a malicious user could easily inject malicious SQL into the query to alter the query logic and return another users account.
 
 Using an ORM protects you against that by automatically separating the data from the query. Running the following statement using SQLAlchemy yields the SQL below:
-~~~~{sql}
+~~~~{python}
 Session.query(Users).filter_by(id=10).one()
 ~~~~
 ~~~~{sql}
@@ -47,7 +47,7 @@ SQLAlchemy automatically does this for you when you use the ILIKE function. Beca
 ### Queries as objects ###
 When you start treating queries as objects you can do some interesting things. In my film recommendation site the user can choose to filter their recommendations based on a few criteria (director, IMDB score etc). If the user doesn't specify a search query for a certain criteria then that condition is not added to the query:
 
-~~~~{sql}
+~~~~{python}
 rec_query = db.session.query(Movie.imdb_id).filter(Movie.imdb_id.in_(id_counters.keys()))
 if filter_imdb_score > 0:
     rec_query = rec_query.filter(Movie.imdb_score >= filter_imdb_score)
