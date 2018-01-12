@@ -5,13 +5,14 @@
       {
         "targets": {
           "browsers": [
+            "> 1%",
             "last 2 versions",
             "not ie 11"
           ]
         },
         "useBuiltIns": true,
         "debug": true,
-        "modules": false,
+        "modules": false
       }
     ],
     "react"
