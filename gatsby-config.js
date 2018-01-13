@@ -1,11 +1,10 @@
 module.exports = {
     siteMetadata: {
-        title: "Toms corner of the internet",
+        title: "Tom's corner of the internet",
         author: 'Tom Forbes',
         description: 'Hello!',
         siteUrl: 'https://tomforb.es',
     },
-    pathPrefix: '/gatsby-starter-blog',
     plugins: [
         {
             resolve: `gatsby-source-filesystem`,

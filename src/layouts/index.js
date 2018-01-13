@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import get from 'lodash/get'
 import { Container } from 'react-responsive-grid'
 
 import { rhythm, scale } from '../utils/typography'
@@ -9,42 +10,24 @@ import "prismjs/themes/prism-tomorrow.css"
 class Template extends React.Component {
   render() {
     const { location, children } = this.props
-    let header
-
-    let rootPath = `/`
-    if (typeof __PREFIX_PATHS__ !== `undefined` && __PREFIX_PATHS__) {
-      rootPath = __PATH_PREFIX__ + `/`
-    }
-
-    if (location.pathname === rootPath) {
-      header = (
-        <h1
-          style={{
+    let style;
+    if (location.pathname === '/') {
+        style = {
             ...scale(1.5),
             marginBottom: rhythm(1.5),
             marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: 'none',
-              textDecoration: 'none',
-              color: 'inherit',
-            }}
-            to={'/'}
-          >
-            Gatsby Starter Blog
-          </Link>
-        </h1>
-      )
+        }
     } else {
-      header = (
-        <h3
-          style={{
+        style = {
             fontFamily: 'Montserrat, sans-serif',
             marginTop: 0,
             marginBottom: rhythm(1.5),
-          }}
+        }
+    }
+
+    const header = (
+        <h1
+          style={style}
         >
           <Link
             style={{
@@ -54,15 +37,14 @@ class Template extends React.Component {
             }}
             to={'/'}
           >
-            Gatsby Starter Blog
+              {get(this, 'props.data.site.siteMetadata.title')}
           </Link>
-        </h3>
+        </h1>
       )
-    }
     return (
       <Container
         style={{
-          maxWidth: rhythm(24),
+          maxWidth: rhythm(30),
           padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
         }}
       >
@@ -74,3 +56,13 @@ class Template extends React.Component {
 }
 
 export default Template
+
+export const query = graphql`
+  query LayoutQuery {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`

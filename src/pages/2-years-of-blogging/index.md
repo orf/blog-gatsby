@@ -3,6 +3,7 @@ layout: single
 title: "2 years of blogging"
 date: 2014-03-06 21:04:44.165906
 permalink: /2-years-of-blogging
+tags: ["meta"]
 ---
 
 When I first came to University lots of people (like [Rob Miles](http://www.robmiles.com)) were trying to get undergraduates to start blogging. On the 6th of March 2012 I registered this domain and started blogging, getting myself added to the awesome [Hull Compsci blogs syndicate](http://hullcompsciblogs.com). That was two years ago and a lot has changed so I thought I would write a summary post.
@@ -17,7 +18,7 @@ I've put a few projects on the [Python package index](http://pypi.python.org/pyp
 #### Popular posts
 In the last two years this blog has had 67,184 visitors with a peak of over 1,000 concurrent viewers, which is pretty neat. Simple handled every request speedily with no errors.
 
-![](/uploads/analytics_level_BEAMOOAX.png)
+![](./analytics.png)
 
 The most popular posts are:
 
@@ -39,10 +40,13 @@ According to [Google Webmaster tools](https://www.google.com/webmasters/) some o
 ##### Viewer information
 I use Google Analytics for my website stats and it also tracks things like browser usage, operating system and screen resolution. 
 
-<table><tr><td><img src="/uploads/OS_PUKUI7K4.png"></td><td><img src="/uploads/OS_YCU5JITI.png"></td></tr></table>
+<table><tr><td><img src="./os_breakdown.png"></td><td><img src="./os_breakdown2.png"></td></tr></table>
 
 #### Security stuff
-I found a  4 "grave" security issues in some software that got issued their own CVE numbers (which is awesome!): [osvdb.org/creditees/11331-tom-forbes](http://osvdb.org/creditees/11331-tom-forbes). Slightly before I started this blog I also [presented a research paper](https://media.blackhat.com/bh-eu-12/Siddharth/bh-eu-12-Siddharth-Xpath-WP.pdf) at the BlackHat security conference which was the most scary hour of my life. I haven't really blogged about it but I intend to in the coming weeks.
+I found a  4 "grave" security issues in some software that got issued their own CVE numbers (which is awesome!):
+ [osvdb.org/creditees/11331-tom-forbes](http://osvdb.org/creditees/11331-tom-forbes).
+Slightly before I started this blog I also [presented a research paper](https://media.blackhat.com/bh-eu-12/Siddharth/bh-eu-12-Siddharth-Xpath-WP.pdf)
+at the BlackHat security conference which was the most scary hour of my life. I haven't really blogged about it but I intend to in the coming weeks.
 
 #### Conclusion
 I'm pretty happy with the last two years and I'm both excited for the future and a bit sad that my time at Hull is coming to a close.

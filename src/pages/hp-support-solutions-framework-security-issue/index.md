@@ -41,7 +41,7 @@ When a browser makes a HTTP request the browser adds some information to the hea
 
 So let's get right into the code and see how these headers are used. After decompiling the software we find the following (abbreviated) function inside *SolutionsFrameworkService.SsfWebserver*:
 
-```c#
+```csharp
 private void GetContextCallback(IAsyncResult result)
 {
    string uriString;
