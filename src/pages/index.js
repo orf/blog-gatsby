@@ -16,7 +16,7 @@ class BlogIndex extends React.Component {
         <Helmet title={siteTitle} />
         <Bio />
         {posts.map(({ node }) => {
-          const title = get(node, 'frontmatter.title') || node.fields.slug
+          const title = get(node, 'frontmatter.title', node.fields.slug)
           return (
             <div key={node.fields.slug}>
               <h3
@@ -57,6 +57,7 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "DD MMMM, YYYY")
             title
+            tags
           }
         }
       }

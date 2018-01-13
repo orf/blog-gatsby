@@ -33,13 +33,13 @@ I ran the tests on my laptop and a Linux VPS that hosts this blog. My laptop run
 The results were surprising - Jinja2 completely destroyed Django in every test, and my VPS outperformed my development laptop. Django also used nearly 2,400 function calls to render a [fairly basic template](https://github.com/orf/howslow_django/blob/master/templates/django_tutorial_page.html), which seemed a bit excessive.
 
 #### Linux
-![](/uploads/chart_2_2_ZSL2JECI.png)
+![](./chart_2_2_ZSL2JECI.png)
 
 #### Windows
-![](/uploads/chart_2_3_3IJ7QHFP.png)
+![](./chart_2_3_3IJ7QHFP.png)
 
 #### Function calls
-![](/uploads/chart_3_1_UEO4GN4N.png)
+![](./chart_3_1_UEO4GN4N.png)
 
 For Django the profile printout for the tutorial page can be found here: [https://gist.github.com/orf/5153108](https://gist.github.com/orf/5153108)
 

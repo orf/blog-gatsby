@@ -18,7 +18,7 @@ There are two main reasons for needing a separate server to handle the searching
 
 The server would have to be modular (each source of restaurant information should be in a separate class) and when a client makes a search each of the modules are called in parallel and return information. The reduced results are then serialized and sent to the client. 
 
-![](http://i.imgur.com/Ii2JeF3.png)
+![](./Ii2JeF3.png)
 
 ### Information Sources
 I identified 3 main sources of information on local chicken establishments:
@@ -30,7 +30,7 @@ I identified 3 main sources of information on local chicken establishments:
 #### KFC
 The KFC website was the simplest to implement: their site has a "Find your local KFC" section where you can enter your location and it will show a map with local KFC's and your distance from them. I opened up Chromes' development console (F12) to see how it was getting this information. After navigating to Network->XHR and refreshing the page I discovered it was making an ajax request to find the locations:
 
-![](http://i.imgur.com/BIpM0yW.png)
+![](./BIpM0yW.png)
 
 The users browser sends a request to a URL like this: [ http://www.kfc.co.uk/our-restaurants/search?latitude=53.7456709&longitude=-0.3367412999999715&radius=10]( http://www.kfc.co.uk/our-restaurants/search?latitude=53.7456709&longitude=-0.3367412999999715&radius=10&storeTypes=) which returns a JSON array with information on local KFC's.
 
@@ -60,7 +60,7 @@ Extracting information from websites by parsing their HTML is prone to breaking:
 
 Soon after I got the screen scraping code mostly working I did notice that they had an iPhone app that didn't use their website. This means that the app must be getting its data from somewhere else, and it must be from some form of API. So I installed it on my girlfriends iPhone and configured its proxy settings to point to my laptop so I can inspect any network traffic the app sends. After opening the app and running the excellent [Burp suite](http://www.portswigger.net/burp/) on my computer I saw the following requests were being made:
 
-![](http://i.imgur.com/fWYDCwQ.png)
+![](./fWYDCwQ.png)
 
 So it looked like Just-Eat did have an API after all. After having a poke around I found that they helpfully have a [Web Services Defintion Language file](http://en.wikipedia.org/wiki/Web_Services_Description_Language) which Visual Studio can use to generate client code. This code interacts with their API. Importing the WSDL file into VS2012 was easy: Simply right click a project in Visual Studio, select "Add Service Reference" and input "[http://api.just-eat.com/MenuApi.svc?wsdl=wsdl0](http://api.just-eat.com/MenuApi.svc?wsdl=wsdl0)" into the Address field. Visual Studio discovers all of the methods available and the parameters and generates classes that match them. You can view the code that uses the API [here](https://github.com/orf/FindMeChicken-mono/blob/master/FindMeChicken-ASP/Sources/JustEatAPI/JustEatAPISource.cs), it really is much nicer to look at and much more maintainable than the HTML parsing version.
 

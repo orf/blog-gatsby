@@ -16,7 +16,7 @@ When I browse the net I often see the hallmarks of a security issue with website
 ### Local file inclusion, arbitrary writing of files insecure file uploads
 These are the most interesting exploit I found. The first thing I noticed about the site was that a filename appeared in a GET parameter - this is a classic sign of a [File Inclusion Vulnerability](http://en.wikipedia.org/wiki/File_inclusion_vulnerability). You can generally test if the website sanitizes the filename correctly by doing this:
 
-![](/uploads/possible_LFI_KSQFBUZW.png)
+![](./possible_LFI_KSQFBUZW.png)
 
 Two requests were sent, one with filename.txt and one with ../Macintosh/filename.txt (Can be subsituted with ./filename.txt). If the website was not properly validating the input and merely appending the filename on the end of a file path then both pages should be the same, which they are. The website was essentially doing this:
 
@@ -30,11 +30,11 @@ You should never trust user input. If you are expecting a filename as a paramete
 
 Another feature of the site is the ability to add your own posts, I thought that if they don't validate path names here then they probably don't validate when creating posts either. You could create a article called ../test.txt and it would create a file containing the contents in the directory below the one it was supposed to.
 
-![](/uploads/file_write_XUNNNA4F.png)
+![](./file_write_XUNNNA4F.png)
 
 I thought I could create an article called ../../HackedView.py and fill it with some python code that would fork itself and get me a reverse shell (and that would be worth writing about), but it was not possible. Instead I cheated and simply uploaded a PHP shell as an attachment 
 
-![](/uploads/PHPShell_4NI6WTRO.png)
+![](./PHPShell_4NI6WTRO.png)
 
 This shell simply displays a directory listing. I uploaded another one that let me read files, and I could then access the entire sites source code. Securing uploads is a must on any web application - ensure uploaded files are not executable (chmod) and have a proper extension (nobody needs to upload .php files to an image gallery).
 
@@ -47,21 +47,21 @@ This itself isn't dangerous, but a criminal mastermind could put _any_ code he w
 
 There are two types of XSS, _stored_ and _reflective_: __Reflective XSS__ is described above and happens only when someone makes a crafted request, like a search:
 
-![](/uploads/search_xss_DXNYGMU6.png) 
+![](./search_xss_DXNYGMU6.png) 
 The error message is Chrome preventing the XSS code from executing, because it's clever like that. Other and older browsers won't have this protection, or it could be circumvented so it's still an issue.
 
 __Stored XSS__ happens when the code is saved somewhere, perhaps to a database, and is then sent back every time someone views a specific page, and on this site it was in the comments box:
 
-![](/uploads/comments_xss_small_PLKRPTIZ.png)
+![](./comments_xss_small_PLKRPTIZ.png)
 
 Adding a comment like this meant that any time someone viewed that article with the malicious comment in it this would appear:
 
-![](/uploads/stored_XSS_TFIY5VU4.png)
+![](./stored_XSS_TFIY5VU4.png)
 
 ### Bounds checking
 Each article on the site could be rated from 1 to 5, and an average would be displayed to the user. I found that the site wasn't properly validating the rating that was sent from the user - you could quite easily send a rating of 10 (as shown below). This unfortunately caused the article page to become un-viewable (it would only respond with a 500 error).
 
-![](/uploads/votes_boundscheck_smaller_OLOAJMCL.png)
+![](./votes_boundscheck_smaller_OLOAJMCL.png)
 
 You should *never* trust user input in a web application no more than a bank teller should trust a customer when he says he has enough money in his account for a withdrawal and not to bother checking. Always ensure that it matches what you expect or display an error message. 
     

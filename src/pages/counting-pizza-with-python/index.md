@@ -68,7 +68,7 @@ What's interesting is lunchtime sales are pretty negligible compared to the even
 
 Whilst running the script I noticed a few times when the Dominoes site went down. Below is a graph that shows this happening twice on Tuesday:
 
-![](/uploads/newplot_DE6NJRD7.png)
+![](./newplot_DE6NJRD7.png)
 
 You can see the first crash happens right after ~300 orders in 30 seconds, perhaps this contributed to it? The next is smaller, but each must have resulted in a fairly large amount of missed orders as they did happen at peak times.
 

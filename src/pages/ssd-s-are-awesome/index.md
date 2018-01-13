@@ -10,9 +10,9 @@ I recently brought a [Samsung 840 Series Pro 256GB 2.5 inch SATA Solid State Dri
 ### Benchmarks
 The drive came with some software from Samsung to do various things with the drive, including benchmark it. At first I thought the software was just another bit of bloatware but it's actually quite useful and well designed. I used it to benchmark the SSD (my OS drive) and the other 500gb spinning drive:
 
-![](/uploads/random_read_SBZPCL22.png)
+![](./random_read_SBZPCL22.png)
 
-![](/uploads/seq_read_FUYDUCZR.png)
+![](./seq_read_FUYDUCZR.png)
 
 
 My old spinning disk barely managed to scrape 250 random IO operations a second, whereas the SSD blasted ahead with nearly **65,000**. That's 260x more random reads! The net result of this is everything is pretty much instant: the boot, visual studio, Chrome etc. It's like having a new laptop again.
@@ -30,5 +30,5 @@ Capacity - 256GB doesn't seem like much, and it isn't if you have a lot of movie
 #### The software
 The software deserves its own section. It allows you to benchmark your disk (and any other attached disk), optimize your OS for several different use cases (performance, capacity or resilience) and upgrade the firmware. Its genuinely quite cool and I wish all pre-bundled software was as good as this. The screenshot below is a random one I found on the internet:
 
-![](/uploads/samsung_magicansnip_zps108af93f_OVRBMA4K.jpg)
+![](./samsung_magicansnip_zps108af93f_OVRBMA4K.jpg)
     

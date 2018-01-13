@@ -46,15 +46,15 @@ The code can be found [here on github](https://github.com/orf/uni_timetables)
 #### Screenshots
 Selecting modules is easy, you can browse or filter by typing
 
-![](/uploads/select2_I52URROQ.png)
+![](./select2_I52URROQ.png)
 
 Lectures are displayed in a table, each module having its own colours
 
-![](/uploads/new1_V2PBAXDX.png)
+![](./new1_V2PBAXDX.png)
 
 Works with mobile devices as well
 
-![](/uploads/mobile1_DLSM4H7P.png)
+![](./mobile1_DLSM4H7P.png)
 
 
     

@@ -46,5 +46,5 @@ I have also created an [automated test script](https://github.com/orf/wordinsert
 
 Here is a snapshot of the top of the comparison page:
 
-![](/uploads/2015-05-24_20_53_22-Mozilla_Firefox_ZQZAJJUX.png)
+![](./2015-05-24_20_53_22-Mozilla_Firefox_ZQZAJJUX.png)
     

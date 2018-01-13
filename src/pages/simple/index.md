@@ -15,7 +15,7 @@ When you type a post you appear to type directly on the page, there is no annoyi
 Posts are arranged into two groups: drafts and non-drafts. You can slowly start work on several ideas at once, and once they form into proper posts publish them to the frontpage.
 
 Its got some nice code highlighting as well, which was one thing that was annoying me with WordPress:
-~~~~{.prettyprint}
+~~~~python
 import math
 def test(x,y):
          return (x+y) + math.sqrt(x)

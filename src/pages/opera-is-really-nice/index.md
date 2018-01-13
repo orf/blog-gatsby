@@ -7,7 +7,7 @@ permalink: /opera-is-really-nice
 
 I really like the Opera browser.
 
-![](/uploads/Opera-Google_YFK7GTDP.png)
+![](./Opera-Google_YFK7GTDP.png)
 
 A couple of months ago I got a bit tired of using Google Chrome, it was just a bit sluggish sometimes and I fancied a change. So I switched to Firefox, which I enjoyed using for a month or so until it too became irksome - it used a hell of a lot of memory and was also often very sluggish (moreso than Chrome was). In desperation I decided to give [Opera](http://www.opera.com) a spin and to my surprise I really liked it.
 

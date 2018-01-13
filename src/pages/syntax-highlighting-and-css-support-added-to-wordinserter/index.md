@@ -87,5 +87,5 @@ All it does is parse the CSS file using the awesome `cssutils` library then crud
 In both cases the finished document will look like this:
 
 
-![](/uploads/python-code_7FLFY4AH.png)
+![](./python-code_7FLFY4AH.png)
     

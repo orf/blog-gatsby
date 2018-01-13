@@ -3,7 +3,8 @@ layout: single
 title: "2 years of blogging"
 date: 2014-03-06 21:04:44.165906
 permalink: /2-years-of-blogging
-tags: ["meta"]
+tags:
+    - meta
 ---
 
 When I first came to University lots of people (like [Rob Miles](http://www.robmiles.com)) were trying to get undergraduates to start blogging. On the 6th of March 2012 I registered this domain and started blogging, getting myself added to the awesome [Hull Compsci blogs syndicate](http://hullcompsciblogs.com). That was two years ago and a lot has changed so I thought I would write a summary post.

@@ -3,8 +3,8 @@ layout: single
 title: "A test RSS feed service"
 date: 2014-04-01 02:33:57.398105
 permalink: /a-test-rss-feed-service
-categories:
-   - projects
+tags:
+    - projects
 ---
 
 The coursework set for my Distributed Systems involves reading new items from RSS feeds (such as the BBC News feed or the UK traffic incident feed). To help me build the system I developed a simple service that serves up RSS feeds that are regularly automatically updated with nonsense items, and it might be useful for anyone else doing something related. It sure beats waiting for BBC news to publish a story or someone to crash on the M4.

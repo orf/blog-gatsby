@@ -28,15 +28,15 @@ internal static User UserLogin(String username, String password)
 
 So, lets hack it. [ILSpy](http://ilspy.net/) is a fantastic tool for debugging .NET applications. One of its best features is you can set breakpoints in arbitrary assemblies (__you have to compile it from source in debug mode to enable that it seems__). Because the app fetches the user and then compares it locally we can just set a breakpoint after it fetches the object but before it performs any checks. First you have to execute the assembly through ILSpy:
 
-![](/uploads/MarFAIL1_Z7AUSWDY.png)
+![](./MarFAIL1_Z7AUSWDY.png)
 
 Once you have selected the executable ILSpy will execute it and decompile the sources. This allows you to navigate through the source (which may differ from the real source in some ways) and set breakpoints to be triggered. You can use the sidebar on the left to navigate the various namespaces in the assembly and view the classes contained within. Below I have located the actual code segment where the user is fetched and I have set a breakpoint on the statement after it.
 
-![](/uploads/MarFAIL2_PCNNHY36.png)
+![](./MarFAIL2_PCNNHY36.png)
 
 After I've set the breakpoint I simply need to attempt to login as the "admin" user (with any password) and I can view all of the admin users attributes (public and private), including his password hash, by simply hovering over the reference in the source code.
 
-![](/uploads/2013-09-11_17_18_01-Validate_your_input_bro_-_Toms_corner_of_the_internet_2XPXTNSH_JQPOYWWB.png)
+![](./2013-09-11_17_18_01-Validate_your_input_bro_-_Toms_corner_of_the_internet_2XPXTNSH_JQPOYWWB.png)
 
 Isn't ILSpy awesome?
     

@@ -10,7 +10,7 @@ permalink: /profiling-django-templates-with-django-debug-toolbar
 ##### Enter Template-timings
 [Template-timings](https://github.com/orf/django-debug-toolbar-template-timings) is a panel for [Django-debug-toolbar](https://github.com/django-debug-toolbar/django-debug-toolbar) (which everyone should be using, right?) that lets you see a breakdown of the rendering process. It currently gives you timing information on each block and template rendered in a convenient panel. It works on {%raw%}{% blocks %}, {% extends %} and {% include %}'ed{%endraw%} templates.
 
-![](/uploads/django-debug-toolbar_KPL2PKO7.png)
+![](./django-debug-toolbar_KPL2PKO7.png)
 
 
 ##### Download

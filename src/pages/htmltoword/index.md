@@ -27,7 +27,7 @@ Example:
 
 This code will create a new Word document and fill it like so:
 
-![](http://i.imgur.com/PJcHQJG.png)
+![](./PJcHQJG.png)
 
 Its pretty neat I think - I can't be the *only* one with this kind of issue so I hope this library helps someone.
     

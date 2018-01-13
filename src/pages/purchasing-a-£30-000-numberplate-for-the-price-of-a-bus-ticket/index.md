@@ -12,23 +12,23 @@ categories:
 #### The order process
 The order process is simple and painless. You search for a numberplate and browse ones available for purchase. Once you have found one that you like you select "Buy" and you are taken to a page where you can enter your personal details:
 
-![](/uploads/proper_total_JKMOZWWG.png)
+![](./proper_total_JKMOZWWG.png)
 
 Within the order page there is a form element with some interesting names:
 
-![](/uploads/vuln_form_5F5IOWYK.png)
+![](./vuln_form_5F5IOWYK.png)
 
 Surely the site would validate the input to ensure no negative values could be added?
 
-![](/uploads/modified_form_YQGDI4LB.png)
+![](./modified_form_YQGDI4LB.png)
 
 Or not
 
-![](/uploads/order_total_A2ROBCPV.png)
+![](./order_total_A2ROBCPV.png)
 
 And finally the payment page:
 
-![](/uploads/purchasing_4QISBW5X.png)
+![](./purchasing_4QISBW5X.png)
 
 I would have certainly been able to complete the payment but whether or not the order would have succeeded depends on how automated regtransfers.co.uk is. I doubt it's completely automated so I expect someone along the line would have flagged this up and stopped the transfer, but who knows? This goes to show that while using a framework can protect you against common flaws like SQL injection or XSS business logic still needs to be tested and inputs still need to be validated.
     

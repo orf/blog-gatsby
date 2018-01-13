@@ -10,7 +10,7 @@ categories:
 
 American Fuzzy Lop is both a [really cool tool for fuzzing programs](http://lcamtuf.coredump.cx/afl/) and an [adorable breed of bunny](https://www.google.co.uk/search?tbm=isch&source=hp&q=American+Fuzzy+Lop). In this post I'm going to show you how to get the the tool (rather than the rabbit) up and running and find some crashes in the cPython interpreter.
 
-![](/uploads/ezgif.com-optimize_M5HXENUA.gif)
+![](./ezgif.com-optimize_M5HXENUA.gif)
 
 ### Fuzzing?
 
@@ -77,14 +77,14 @@ Then invoke `afl-fuzz` like so:
 
 You should see a screen like the one below:
 
-![](/uploads/Screenshot_at_Mar_06_19-23-21_5SHLW43Y.png)
+![](./Screenshot_at_Mar_06_19-23-21_5SHLW43Y.png)
 
 
 ### Fuzzing Python *fast*
 
 Notice something about the image above?
 
-![](/uploads/Screenshot_at_Mar_06_19-23-21_7LY6R7OL.png)
+![](./Screenshot_at_Mar_06_19-23-21_7LY6R7OL.png)
 
 
 Damn. That's terrible. We are never going to get anywhere with 20 executions a second - we need millions and millions to get good results. Lucky for us there is a trick we can use to greatly improve that speed.
@@ -155,7 +155,7 @@ And then execute `afl-fuzz`. The `-f input.pyc` flag forces the input file to ha
 
 You should see the following screen:
 
-![](/uploads/Screenshot_at_Mar_06_20-24-32_O3DQ2AMD.png)
+![](./Screenshot_at_Mar_06_20-24-32_O3DQ2AMD.png)
 
 Notice the speed: `373.4/sec`, up from 20! And we've already found 100 unique crashes!
 

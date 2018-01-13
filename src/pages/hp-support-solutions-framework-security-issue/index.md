@@ -21,7 +21,7 @@ HP were incredibly prompt at fixing the issue and responding to communications. 
 ### Summary
 Many large hardware vendors offer tools to automatically detect the hardware configuration of users machines to take them to the exact drivers that they require. Just like Dell, HP feature this software prominently on their support landing page.
 
-![](/uploads/detect_my_product_H26MGOLW.png)
+![](./detect_my_product_H26MGOLW.png)
 
 Unfortunately just like Dell the HP software contains a number of functions that you wouldn't expect. When you click "Find Now" you are actually downloading the complete [HP Support Solutions Framework](http://h20614.www2.hp.com/ediags/gmd/about.aspx?lc=en&cc=uk) which includes functionality to:
 
@@ -35,7 +35,7 @@ The program also attempts to send any collected data back to HP servers and also
 ### The juicy details
 As previously stated the software installs a service on your computer and listens for HTTP requests on *localhost:8092*. The JavaScript in your browser then communicates with this service by making AJAX requests to that local port. Below shows the page fetching the version information of the installed software:
 
-![](/uploads/browser_NCM47OY5.png)
+![](./browser_NCM47OY5.png)
 
 When a browser makes a HTTP request the browser adds some information to the headers about the page or context that initiated the request, in the **Referer** (yes, spelt like that) and **Origin** headers. Under usual circumstances these requests would be coming from the HP support site, so the **Referer** header might have a value of **http://www8.hp.com/uk/en/drivers.html**.
 
@@ -75,7 +75,7 @@ When the program processes a request it inspects the first two components of the
 
 Then this triggers the download assistant to start, which brings itself to the foreground downloads the file:
 
-![](/uploads/Install_MFTZFC73.png)
+![](./Install_MFTZFC73.png)
 
 I looked long and hard but the software doesn't automatically install anything without user interaction. However this doesn't render the attack useless, far from it. The attacker is able to control the displayed file title ("update.exe" in the screenshot) and can completely hide the real executable name by calling it "_.exe", which causes the download assistant to display "(.exe)" after it. One redeeming feature of this software is that it only accepts download requests for files that are served over HTTPS.
 
@@ -94,7 +94,7 @@ When an HP support technician attempts to diagnose problems with a customer's co
    3. The program then reads the specified portions of the files and sends them back to *diagsgmdextpro.houston.hp.com*
    4. The support technician presumably accesses this information to diagnose any issues.
 
-![](/uploads/HP_img_1_1_UEIGXEMD.png)
+![](./HP_img_1_1_UEIGXEMD.png)
 
 You can view an example of the servers response by visiting the following URL: [http://diagsgmdextpro.houston.hp.com/ediags/solutions/harvestertemplate?productLine=KV](http://diagsgmdextpro.houston.hp.com/ediags/solutions/harvestertemplate?productLine=KV), and below is a snippet of the result that instructs the software to read a registry key:
 
@@ -128,11 +128,11 @@ Once done, the attacker can make the request to the users software and it will c
    2. Program resolves the *diagsgmdextpro.houston.hp.com* to an attacker controlled IP and makes a request for files to read. The attacker returns a list of files he or she wants to read
    3. The program collects these files and sends them back to the *diagsgmdextpro* address, simply giving the data to the attacker.
 
-![](/uploads/Hp_2_1_V3WDPEHK.jpg)
+![](./Hp_2_1_V3WDPEHK.jpg)
 
 As you can see from the sample XML above for each bit of data we read there has to be some form of filter in the form of a regular expression. We can simply use the expression **.* ** to match the entire file. In the screenshot below I have made a simple web application that serves a malicious page that instructs the software to read **C:\\secret.txt** and the user's system information. The console window to the left shows that the program has dutifully sent the data to the attacker controlled server.
 
-![](/uploads/read_files_H63OFCYD.png)
+![](./read_files_H63OFCYD.png)
 
 
 ### Conclusion

@@ -15,11 +15,11 @@ This worked great and powered my blog for three years or so without any issues, 
 
 And so here it is. It tries to stay true to it's name by being simple to use and install whilst still having a decent feature set and a nice design. The editing interface is a styled textarea that grows as you type, and adding an image is a simple as dragging and dropping it onto the page. This will upload the image and insert the right markdown at your cursor position. You can also edit the title by just selecting it and typing.
 
-![](/uploads/editor_VAX22JW3.png)
+![](./editor_VAX22JW3.png)
 
 One thing I really liked about the HPSTR theme is the large image header, and I decided to combine this with the [Bing daily image](http://www.istartedsomething.com/bingimages/). When writing a post you can view the last 25 daily images by clicking the picture icon in the top right and using the left and right arrows to navigate:
 
-![](/uploads/header-min_L2J3XEBM.png)
+![](./header-min_L2J3XEBM.png)
 
 I've tried to make installing Simple a painless as possible. You create a virtual environment for Simple, install the package and then use the 'simple' command to create a blog. Creating and maintaining config files is a pain, so you can use the simple command to create nginx and supervisord config files with the right file paths included (You will likely need to run `apt-get install nginx` or `yum install nginx`, and install [supervisor](http://supervisord.org/installing.html) to use them).
 

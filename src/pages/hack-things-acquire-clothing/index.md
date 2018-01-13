@@ -13,5 +13,5 @@ Bug bounty programs can be a nice bit of side income if you have some spare time
 
 The loot:
 
-![](/uploads/oie_22143645s69tM98d_OKJAOIRW.jpg)
+![](./oie_22143645s69tM98d_OKJAOIRW.jpg)
     
