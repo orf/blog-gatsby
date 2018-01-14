@@ -1,58 +1,51 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import get from 'lodash/get'
-import { Container } from 'react-responsive-grid'
+import {Container} from 'react-responsive-grid'
 
-import { rhythm, scale } from '../utils/typography'
+import {rhythm, scale} from '../utils/typography'
 
 import "prismjs/themes/prism-tomorrow.css"
 
 class Template extends React.Component {
-  render() {
-    const { location, children } = this.props
-    let style;
-    if (location.pathname === '/' || location.pathname.startsWith('/tags/')) {
+    render() {
+        const {children} = this.props
+        let style
         style = {
             ...scale(1.5),
-            marginBottom: rhythm(1.5),
-            marginTop: 0,
-        }
-    } else {
-        style = {
             fontFamily: 'Montserrat, sans-serif',
             marginTop: 0,
             marginBottom: rhythm(1.5),
         }
-    }
 
-    const header = (
-        <h1
-          style={style}
-        >
-          <Link
-            style={{
-              boxShadow: 'none',
-              textDecoration: 'none',
-              color: 'inherit',
-            }}
-            to={'/'}
-          >
-              {get(this, 'props.data.site.siteMetadata.title')}
-          </Link>
-        </h1>
-      )
-    return (
-      <Container
-        style={{
-          maxWidth: rhythm(30),
-          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-        }}
-      >
-        {header}
-        {children()}
-      </Container>
-    )
-  }
+        const header = (
+            <h1
+                style={style}
+            >
+                <Link
+                    style={{
+                        boxShadow: 'none',
+                        textDecoration: 'none',
+                        color: 'inherit',
+                    }}
+                    to={'/'}
+                >
+                    {get(this, 'props.data.site.siteMetadata.title')}
+                </Link>
+            </h1>
+        )
+        return (
+            <Container
+                style={{
+                    maxWidth: rhythm(30),
+                    padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+                }}
+            >
+                {header}
+                {children()}
+            </Container>
+        )
+    }
 }
 
 export default Template
