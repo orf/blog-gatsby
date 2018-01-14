@@ -14,6 +14,12 @@ module.exports = {
             },
         },
         {
+            resolve: `gatsby-plugin-canonical-urls`,
+            options: {
+                siteUrl: `https://www.tomforb.es`,
+            },
+        },
+        {
             resolve: `gatsby-transformer-remark`,
             options: {
                 plugins: [

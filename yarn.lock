@@ -3931,6 +3931,12 @@ gatsby-module-loader@^1.0.9:
     babel-runtime "^6.26.0"
     loader-utils "^0.2.16"
 
+gatsby-plugin-canonical-urls@^1.0.11:
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-canonical-urls/-/gatsby-plugin-canonical-urls-1.0.11.tgz#d5e2fe1b04bdf45cc770afebb4bcf116f6cd82c5"
+  dependencies:
+    babel-runtime "^6.26.0"
+
 gatsby-plugin-catch-links@^1.0.14:
   version "1.0.14"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-catch-links/-/gatsby-plugin-catch-links-1.0.14.tgz#e003f51dac46225eccff1ec9daca0ee64e7d4fe5"
