@@ -27,7 +27,7 @@ class BlogPostTemplate extends React.Component {
                     }}
                 >
                     {post.frontmatter.date}
-                    {tags &&
+                    {tags.length &&
                         <span>
                             {' - '}Under: <Tags tags={tags}/>
                         </span>

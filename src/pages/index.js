@@ -19,7 +19,7 @@ const BlogIndex = ({data}) => {
                                     title={node.frontmatter.title}
                                     slug={node.fields.slug}
                                     date={node.frontmatter.date}
-                                    tags={node.frontmatter.tags}
+                                    tags={node.frontmatter.tags || []}
                                     excerpt={node.excerpt}
                 />
             })}
