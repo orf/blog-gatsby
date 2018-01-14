@@ -11,7 +11,7 @@ class Template extends React.Component {
   render() {
     const { location, children } = this.props
     let style;
-    if (location.pathname === '/') {
+    if (location.pathname === '/' || location.pathname.startsWith('/tags/')) {
         style = {
             ...scale(1.5),
             marginBottom: rhythm(1.5),

@@ -3,6 +3,8 @@ layout: single
 title: "Displaying a processes output on a web page with Websockets and Python"
 date: 2013-07-15 18:40:38.700955
 permalink: /displaying-a-processes-output-on-a-web-page-with-websockets-and-python
+tags:
+    - experiments
 ---
 
 A few days ago a colleague of mine asked me how you would pipe the standard output of a process into a browser. I hacked around for a few hours and came up with a websockets based solution (using [Twisted](http://www.twistedmatrix.com) and [Autobahn.ws](http://autobahn.ws/python)) that you can see below (**Your browser needs to support WebSockets, sorry IE9 and lower**).

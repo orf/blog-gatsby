@@ -3,9 +3,8 @@ layout: single
 title: "Syntax highlighting and CSS support added to wordinserter"
 date: 2016-07-26 01:22:28.909127
 permalink: /syntax-highlighting-and-css-support-added-to-wordinserter
-categories:
+tags:
    - projects
-   - wordinserter
 ---
 
 I recently added syntax highlighting and support for CSS stylesheets to [wordinserter](https://github.com/orf/wordinserter), and the implementation was satisfying enough that I thought I would blog about it.

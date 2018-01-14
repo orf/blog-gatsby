@@ -3,6 +3,8 @@ layout: single
 title: "Adding mobile support to Simple"
 date: 2012-09-22 17:50:04.589203
 permalink: /adding-mobile-support-to-simple
+tags:
+    - simple
 ---
 
 Last week I finally got round to adding support for mobile devices to [Simple](https://github.com/orf/simple) (the software that powers this blog). I thought I would write a quick post about getting a mobile version of your site up and running using [Bootstrap](http://twitter.github.com/bootstrap/) from Twitter without changing much code at all.

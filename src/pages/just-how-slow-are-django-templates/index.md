@@ -3,7 +3,7 @@ layout: single
 title: "Just how slow are Django templates?"
 date: 2013-03-13 18:17:38.885589
 permalink: /just-how-slow-are-django-templates
-categories:
+tags:
    - experiments
 ---
 

@@ -3,7 +3,7 @@ layout: single
 title: "Using Python metaclasses to make awesome Django model field choices"
 date: 2012-08-13 21:57:14.020946
 permalink: /using-python-metaclasses-to-make-awesome-django-model-field-choices
-categories:
+tags:
    - projects
 ---
 

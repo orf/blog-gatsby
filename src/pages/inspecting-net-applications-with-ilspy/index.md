@@ -3,7 +3,7 @@ layout: single
 title: "Inspecting .NET applications with ILSpy"
 date: 2013-09-19 12:40:40.611816
 permalink: /inspecting-net-applications-with-ilspy
-categories:
+tags:
    - security
 ---
 

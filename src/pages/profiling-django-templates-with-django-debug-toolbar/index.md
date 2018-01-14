@@ -3,6 +3,8 @@ layout: single
 title: "Profiling Django templates with Django-Debug-Toolbar"
 date: 2013-04-18 20:46:58.868518
 permalink: /profiling-django-templates-with-django-debug-toolbar
+tags:
+    - projects
 ---
 
 [My last post](http://tomforb.es/just-how-slow-are-django-templates) about the speed of Django's templating language caused a bit of a stir and it was clear that people didn't really have a clue how long the templates were taking to render in their applications.

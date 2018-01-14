@@ -3,6 +3,8 @@ layout: single
 title: "Hack things, acquire clothing."
 date: 2013-11-22 16:59:42.350119
 permalink: /hack-things-acquire-clothing
+tags:
+    - security
 ---
 
 I discovered an XSS flaw in a website a month ago and reported it to the owners. As a thank you they sent me a hat, a rather large american sized t-shirt and a pair of "DeFeet" socks (guaranteed to stay cooler and drier than any other brand). I didn't expect them to ship something like that overseas for a fairly simple issue, but it was nice that they did.

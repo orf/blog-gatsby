@@ -3,8 +3,8 @@ layout: single
 title: "HtmlToWord"
 date: 2013-02-18 05:38:08.720020
 permalink: /htmltoword
-categories:
-   - wordinserter
+tags:
+   - projects
 ---
 
 *You can find the [code here on github](https://github.com/orf/HtmlToWord) and the package [here on PyPi](https://pypi.python.org/pypi/HtmlToWord)*
