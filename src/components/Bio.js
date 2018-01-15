@@ -1,5 +1,6 @@
 import React from 'react'
 import Gravatar from 'react-gravatar'
+import Link from 'gatsby-link'
 
 // Import typefaces
 import {rhythm} from '../utils/typography'
@@ -22,7 +23,10 @@ export default class Bio extends React.Component {
                 <p>
                     Written by <strong>Tom Forbes</strong> who lives and works in London
                     building useful things with Python and Django.{' '}
-                    <a href="https://github.com/orf/">You can see if there is anything useful on my Github</a>
+                    I usually blog about{' '}
+                    <Link style={{boxShadow: 'none'}} to='/tags/security'>security</Link>,{' '}
+                    <Link style={{boxShadow: 'none'}} to='/tags/projects'>my projects</Link> and{' '}
+                    <Link style={{boxShadow: 'none'}} to='/tags/experiments'>random experiments</Link>
                 </p>
             </div>
         )

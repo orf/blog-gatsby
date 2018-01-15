@@ -4,6 +4,7 @@ import Tags from '../components/Tags'
 import Link from 'gatsby-link'
 
 const PostSummary = ({title, slug, excerpt, date, tags}) => {
+    const hasTags = (tags || []).length > 0;
     return (
         <div key={slug}>
             <h3
@@ -16,8 +17,8 @@ const PostSummary = ({title, slug, excerpt, date, tags}) => {
                 </Link>
             </h3>
             <small>
-                {date}
-                {tags &&
+                {date}{' '}
+                {hasTags &&
                 <span>
                     {' - '}Under: <Tags tags={tags}/>
                 </span>

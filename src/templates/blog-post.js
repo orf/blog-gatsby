@@ -12,7 +12,8 @@ class BlogPostTemplate extends React.Component {
         const post = this.props.data.markdownRemark
         const siteTitle = get(this.props, 'data.site.siteMetadata.title')
         const {previous, next} = this.props.pathContext
-        const tags = get(post, 'frontmatter.tags') || []
+        const tags = get(post, 'frontmatter.tags') || [];
+        const hasTags = (tags || []).length > 0;
 
         return (
             <div>
@@ -27,7 +28,7 @@ class BlogPostTemplate extends React.Component {
                     }}
                 >
                     {post.frontmatter.date}
-                    {tags.length &&
+                    {hasTags &&
                         <span>
                             {' - '}Under: <Tags tags={tags}/>
                         </span>
