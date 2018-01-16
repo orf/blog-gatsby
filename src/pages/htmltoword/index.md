@@ -1,5 +1,4 @@
 ---
-layout: single
 title: "HtmlToWord"
 date: 2013-02-18 05:38:08.720020
 permalink: /htmltoword

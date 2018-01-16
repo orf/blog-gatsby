@@ -1,5 +1,4 @@
 ---
-layout: single
 title: "Adding tail-call optimization to Python"
 date: 2013-10-15 19:04:05.293813
 permalink: /adding-tail-call-optimization-to-python

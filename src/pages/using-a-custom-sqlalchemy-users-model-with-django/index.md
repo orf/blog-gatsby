@@ -1,5 +1,4 @@
 ---
-layout: single
 title: "Using a custom SQLAlchemy Users model with Django"
 date: 2012-04-13 19:45:31.756918
 permalink: /using-a-custom-sqlalchemy-users-model-with-django

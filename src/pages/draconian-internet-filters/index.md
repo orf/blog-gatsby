@@ -1,5 +1,4 @@
 ---
-layout: single
 title: "Draconian internet filters"
 date: 2012-04-12 00:36:44.575146
 permalink: /draconian-internet-filters

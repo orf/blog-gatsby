@@ -1,5 +1,4 @@
 ---
-layout: single
 title: "Breaking out of secured Python environments"
 date: 2013-09-25 20:02:33.631077
 permalink: /breaking-out-of-secured-python-environments

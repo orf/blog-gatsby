@@ -1,5 +1,4 @@
 ---
-layout: single
 title: "Profiling Django templates with Django-Debug-Toolbar"
 date: 2013-04-18 20:46:58.868518
 permalink: /profiling-django-templates-with-django-debug-toolbar

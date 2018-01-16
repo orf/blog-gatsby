@@ -1,5 +1,4 @@
 ---
-layout: single
 title: "Transplanting/Replacing Django child instances without deleting the parent"
 date: 2012-08-31 17:19:20.756751
 permalink: /transplanting-replacing-django-child-instances-without-deleting-the-parent

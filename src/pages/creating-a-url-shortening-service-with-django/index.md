@@ -1,5 +1,4 @@
 ---
-layout: single
 title: "Creating a URL shortening service with Django"
 date: 2012-04-20 17:11:49.705511
 permalink: /creating-a-url-shortening-service-with-django

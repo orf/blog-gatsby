@@ -1,5 +1,4 @@
 ---
-layout: single
 title: "Restricting Thrift clients to specific IP addresses with Twisted"
 date: 2013-11-11 17:17:11.872022
 permalink: /restricting-thrift-clients-to-specific-ip-addresses-with-twisted

@@ -1,5 +1,4 @@
 ---
-layout: single
 title: "SSDs are awesome, buy one."
 date: 2013-07-25 19:54:58.422676
 permalink: /ssd-s-are-awesome

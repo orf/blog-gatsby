@@ -1,5 +1,4 @@
 ---
-layout: single
 title: "University Presentation"
 date: 2013-11-27 18:19:28.225421
 permalink: /university-presentation

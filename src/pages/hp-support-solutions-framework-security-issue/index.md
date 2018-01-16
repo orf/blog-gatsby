@@ -1,5 +1,4 @@
 ---
-layout: single
 title: "HP Support Solutions Framework Security Issue"
 date: 2015-04-11 23:50:23.760884
 permalink: /hp-support-solutions-framework-security-issue

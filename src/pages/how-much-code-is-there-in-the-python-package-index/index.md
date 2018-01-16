@@ -1,5 +1,4 @@
 ---
-layout: single
 title: "How much code is there in the Python Package Index?"
 date: 2013-12-21 05:11:23.732171
 permalink: /how-much-code-is-there-in-the-python-package-index

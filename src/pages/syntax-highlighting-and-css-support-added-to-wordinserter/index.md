@@ -1,5 +1,4 @@
 ---
-layout: single
 title: "Syntax highlighting and CSS support added to wordinserter"
 date: 2016-07-26 01:22:28.909127
 permalink: /syntax-highlighting-and-css-support-added-to-wordinserter

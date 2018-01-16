@@ -1,5 +1,4 @@
 ---
-layout: single
 title: "In favour of ORM's"
 date: 2012-05-14 19:01:27.528062
 permalink: /in-favour-of-orm-s

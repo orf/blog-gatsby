@@ -1,5 +1,4 @@
 ---
-layout: single
 title: "Submitting a patch to Python’s lxml library"
 date: 2014-01-09 07:30:15.817398
 permalink: /submitting-a-patch-to-python’s-lxml-library

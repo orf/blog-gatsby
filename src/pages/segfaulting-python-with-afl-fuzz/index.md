@@ -1,5 +1,4 @@
 ---
-layout: single
 title: "Segfaulting Python with afl-fuzz"
 date: 2016-03-06 22:31:37.100572
 permalink: /segfaulting-python-with-afl-fuzz

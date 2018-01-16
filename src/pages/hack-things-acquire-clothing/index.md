@@ -1,5 +1,4 @@
 ---
-layout: single
 title: "Hack things, acquire clothing."
 date: 2013-11-22 16:59:42.350119
 permalink: /hack-things-acquire-clothing

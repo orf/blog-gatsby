@@ -1,5 +1,4 @@
 ---
-layout: single
 title: "Simple."
 date: 2012-03-29 04:07:15.509958
 permalink: /simple
