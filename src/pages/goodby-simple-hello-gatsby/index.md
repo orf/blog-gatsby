@@ -16,4 +16,7 @@ down I couldn't even log into the bloody thing, and could not really be bothered
 
 So this is my new blog. It's built with [Gatsby](http://gatsbyjs.org/) and deployed with [Netlify](https://netlify.com). 
 It's been an absolute pleasure to develop and deploy, you can view the whole source
-code here: https://github.com/orf/blog-gatsby. Hopefully now I have no excuse to not blog, so I should get back into it. 
+code here: https://github.com/orf/blog-gatsby. With Netlify you just push, and it rebuilds the site and deploys it in 
+about 50 seconds. 
+ 
+Now I have no excuse not to blog.
