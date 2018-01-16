@@ -9,7 +9,7 @@ import "prismjs/themes/prism-tomorrow.css"
 
 class Template extends React.Component {
     render() {
-        const {children, data} = this.props
+        const {children} = this.props
         let style
         style = {
             ...scale(1.5),
