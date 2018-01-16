@@ -36,7 +36,6 @@ class Template extends React.Component {
         )
         return (
             <div>
-                <HeaderImage sizes={data.file.childImageSharp.sizes}/>
                 <Container
                     style={{
                         maxWidth: rhythm(30),
@@ -60,13 +59,6 @@ export const query = graphql`
       siteMetadata {
         title
       }
-    }
-    file(relativePath: { eq: "layouts/header.jpg" }) {
-        childImageSharp {
-          sizes(cropFocus: CENTER, maxHeight: 75) {
-            ...GatsbyImageSharpSizes
-          }
-        }
     }
   }
 `
