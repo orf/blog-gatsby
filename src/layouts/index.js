@@ -63,7 +63,7 @@ export const query = graphql`
     }
     file(relativePath: { eq: "layouts/header.jpg" }) {
         childImageSharp {
-          sizes(cropFocus: ATTENTION, maxHeight: 100) {
+          sizes(cropFocus: CENTER, maxHeight: 75) {
             ...GatsbyImageSharpSizes
           }
         }
