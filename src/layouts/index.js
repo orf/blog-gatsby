@@ -2,14 +2,14 @@ import React from 'react'
 import Link from 'gatsby-link'
 import get from 'lodash/get'
 import {Container} from 'react-responsive-grid'
-
 import {rhythm, scale} from '../utils/typography'
+import HeaderImage from '../components/HeaderImage'
 
 import "prismjs/themes/prism-tomorrow.css"
 
 class Template extends React.Component {
     render() {
-        const {children} = this.props
+        const {children, data} = this.props
         let style
         style = {
             ...scale(1.5),
@@ -17,8 +17,8 @@ class Template extends React.Component {
             marginTop: 0,
             marginBottom: rhythm(1.5),
         }
-
         const header = (
+
             <h1
                 style={style}
             >
@@ -35,15 +35,19 @@ class Template extends React.Component {
             </h1>
         )
         return (
-            <Container
-                style={{
-                    maxWidth: rhythm(30),
-                    padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-                }}
-            >
-                {header}
-                {children()}
-            </Container>
+            <div>
+                <HeaderImage sizes={data.file.childImageSharp.sizes}/>
+                <Container
+                    style={{
+                        maxWidth: rhythm(30),
+                        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+                        zIndex: 2
+                    }}
+                >
+                    {header}
+                    {children()}
+                </Container>
+            </div>
         )
     }
 }
@@ -56,6 +60,13 @@ export const query = graphql`
       siteMetadata {
         title
       }
+    }
+    file(relativePath: { eq: "layouts/header.jpg" }) {
+        childImageSharp {
+          sizes(cropFocus: CENTER, maxHeight: 100) {
+            ...GatsbyImageSharpSizes
+          }
+        }
     }
   }
 `

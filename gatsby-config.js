@@ -14,6 +14,13 @@ module.exports = {
             },
         },
         {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `img`,
+                path: `${__dirname}/src/`
+            }
+        },
+        {
             resolve: `gatsby-plugin-canonical-urls`,
             options: {
                 siteUrl: `https://www.tomforb.es`,
@@ -39,7 +46,7 @@ module.exports = {
                     {
                         resolve: `gatsby-remark-images`,
                         options: {
-                            maxWidth: 590,
+                            maxWidth: 600,
                         },
                     },
                     {
