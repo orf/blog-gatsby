@@ -50,4 +50,3 @@ at the BlackHat security conference which was the most scary hour of my life. I 
 
 #### Conclusion
 I'm pretty happy with the last two years and I'm both excited for the future and a bit sad that my time at Hull is coming to a close.
-    
