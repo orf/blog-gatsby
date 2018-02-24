@@ -22,8 +22,8 @@ the box with little or no configuration. This means that tools are expected to a
 and be fairly simple to invoke right off the bat. Obviously this isn't a universal rule - things like webpack configuration
 is an art unto itself, but in general I think it holds true, and I think perhaps the Python ecosystem could take a few lessons 
 from NodeJS (especially around packaging, but that's getting better thanks to `pipenv` and `pipsi`). That being said, since 
-[switching to gatsby](/goodbye-simple-hello-gatsby) I've found the development experience 
-[quite](https://github.com/gatsbyjs/gatsby/issues/3551) [lacking](https://github.com/gatsbyjs/gatsby/issues/4216)
+[switching to gatsby](/goodbye-simple-hello-gatsby) I've found a [few](https://github.com/gatsbyjs/gatsby/issues/3551) 
+[bugs](https://github.com/gatsbyjs/gatsby/issues/4216) with the development experience.
  
 This may seem like something pretty insignificant to anyone who has worked with Django for any extended period of time 
 but for an absolute beginner it can be quite helpful. I've onboarded a couple of junior developers who had very 
