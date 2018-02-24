@@ -45,8 +45,8 @@ matches = get_close_matches('run-server', ['runserver', 'migrate'])
 # matches = ['runserver']
 ```
 
-If it wasn't for this standard library method Django would have to ship it's own algorithm for suggesting commands, 
-which is a maintenance burden. There is a somewhat simple and effective algorithm you can use, called the 
+If it wasn't for this standard library method Django would have to ship it's own algorithm for suggesting commands.
+There is a somewhat simple and effective algorithm you can use, called the 
 [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance#Computing_Levenshtein_distance), but having 
 a standard library function to take care of this for us is great as it takes the maintenance burden for that potentially 
 hairy code away from Django.
