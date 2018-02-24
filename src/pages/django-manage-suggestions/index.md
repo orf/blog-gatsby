@@ -6,24 +6,24 @@ tags:
    - django
 ---
 
-A very small PR of mine got merged into Django recently - namely adding 'did you mean' suggestions to Django 
-`manage.py` invocations. 
-
-There are many criticisms that you can levy at the NodeJS/Javascript ecosystem but one thing that they tend 
-to get correct is 'developer friendliness', e.g tools that lend themselves to being easy to use out of 
-the box with little or no configuration. This means that tools are expected to auto-reload, produce coloured output
-and be fairly simple to invoke right off the bat. Obviously this isn't a universal rule - things like webpack configuration
-is an art unto itself, but in general I think it holds true.
-
 My recently merged PR for [ticket #28398](https://code.djangoproject.com/ticket/28398) adds very simple 'did you mean'
 suggestions to Django's `manage.py` command, which is the primary way of interacting with Django from the terminal. So in Django 
 2.1 this is what you will expect to see if you misspell a management command:
 
 ```
-> python3 manage.py run-server
+$ python3 manage.py run-server
 Unknown command 'run-server'. Did you mean runserver?
 Type 'manage.py help' for usage.
 ```
+
+There are many criticisms that you can levy at the NodeJS/Javascript ecosystem but one thing that they tend 
+to get correct is 'developer friendliness', e.g tools that lend themselves to being easy to use out of 
+the box with little or no configuration. This means that tools are expected to auto-reload, produce coloured output
+and be fairly simple to invoke right off the bat. Obviously this isn't a universal rule - things like webpack configuration
+is an art unto itself, but in general I think it holds true, and I think perhaps the Python ecosystem could take a few lessons 
+from NodeJS (especially around packaging, but that's getting better thanks to `pipenv` and `pipsi`). That being said, since 
+[switching to gatsby](/goodbye-simple-hello-gatsby) I've found the development experience 
+[quite](https://github.com/gatsbyjs/gatsby/issues/3551) [lacking](https://github.com/gatsbyjs/gatsby/issues/4216)
  
 This may seem like something pretty insignificant to anyone who has worked with Django for any extended period of time 
 but for an absolute beginner it can be quite helpful. I've onboarded a couple of junior developers who had very 
