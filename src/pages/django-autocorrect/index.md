@@ -1,7 +1,7 @@
 ---
-title: "Goodby Simple, hello Gatsby"
+title: "Suggestions added to Django manage.py"
 date: 2018-02-24
-permalink: /django-manage-autocomplete
+permalink: /django-manage-suggestions
 tags:
    - django
 ---
