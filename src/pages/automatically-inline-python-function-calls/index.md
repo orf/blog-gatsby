@@ -70,7 +70,8 @@ sys.meta_path.append(Importer())
 Now whenever anything is imported our find_module() method will be called. This should return an object with a load_module() function, which returns the final module.
 
 ##### Modifying the AST
-Python provides an [AST module](http://docs.python.org/3.4/library/ast.html) to modify Python AST trees. So inside our find_module function we can get the source code of the module we are importing, parse it into an AST representation and then modify it before compiling it. You can see this in [action here](https://github.com/orf/inliner/blob/master/inliner/import_hook.py#L24).
+Python provides an [AST module](http://docs.python.org/3.4/library/ast.html) to modify Python AST trees. So inside our 
+`find_module` function we can get the source code of the module we are importing, parse it into an AST representation and then modify it before compiling it. You can see this in [action here](https://github.com/orf/inliner/blob/master/inliner/import_hook.py#L24).
 
 First we need to find all functions that are wrapped by our inline decorator, which is pretty simple to do. The AST module provides a NodeVisitor and a NodeTransformer class you can subclass. For [each different type of AST node](http://greentreesnakes.readthedocs.org/en/latest/nodes.html) a visit_NAME method will be called, which you can then choose to modify or pass along untouched. The InlineMethodLocator runs through all the function definition's in a tree and stores any that are wrapped by our inline decorator:
 
