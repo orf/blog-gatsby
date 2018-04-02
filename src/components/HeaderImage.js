@@ -1,5 +1,4 @@
 import React from 'react'
-import {Container} from 'react-responsive-grid'
 import Img from "gatsby-image"
 
 import styles from "./HeaderImage.module.css"
