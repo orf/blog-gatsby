@@ -6,9 +6,9 @@ tags:
    - projects
 ---
 
-*View it live [here](http://links.tomforb.es) or get the [code here](https://github.com/orf/tinylink)*
+*View it live [here](https://links.tomforb.es) or get the [code here](https://github.com/orf/tinylink)*
 
-The first URL shortening site I saw was several years ago and was called [TinyURL](http://tinyurl.com/). Soon after Twitter gained popularity a whole slew of them popped up ([bitly](https://bitly.com/), [tiny.cc](http://tiny.cc/), [is.gd](http://is.gd/)) to cater for the masses constrained by Twitters 140 character limit, but a lot shut down because it is fairly hard to monetize and Twitter shortens URL's now, making them a bit pointless.
+The first URL shortening site I saw was several years ago and was called [TinyURL](https://tinyurl.com/). Soon after Twitter gained popularity a whole slew of them popped up ([bitly](https://bitly.com/), [tiny.cc](https://tiny.cc/), [is.gd](https://is.gd/)) to cater for the masses constrained by Twitters 140 character limit, but a lot shut down because it is fairly hard to monetize and Twitter shortens URL's now, making them a bit pointless.
 
 At its heart a URL shortening service is simply a database that maps a short string to a URL, not exactly rocket science to create. Below I will give a basic walk through guide to creating one yourself. Knowledge of Django and Python is assumed.
 
@@ -50,7 +50,7 @@ class Link(models.Model):
         return i
 ```
 
-This model is fairly basic - it stores a URL and a integer representing the number of times the link has been clicked (we will write the view for this later). The get_short_id() method returns the character representation of the ID - we have 62 possible characters (a-z A-Z 0-9) so we convert the number to base 62 and map the digits to characters in our alphabet. This means we can give visitors URL's like *http://mylinksite/abcde* and the *abcde* portion of the URL will hold the link ID. This looks a lot nicer than just using the numeric ID in the URL.
+This model is fairly basic - it stores a URL and a integer representing the number of times the link has been clicked (we will write the view for this later). The get_short_id() method returns the character representation of the ID - we have 62 possible characters (a-z A-Z 0-9) so we convert the number to base 62 and map the digits to characters in our alphabet. This means we can give visitors URL's like *https://mylinksite/abcde* and the *abcde* portion of the URL will hold the link ID. This looks a lot nicer than just using the numeric ID in the URL.
 
 Now create a simple template. The {% raw %}`{% if %}`{% endraw %} statements are there so we can display the generated URL to the user
 

@@ -6,7 +6,7 @@ tags:
    - projects
 ---
 
-I often find myself creating one-off scripts to scrape data off websites for various reasons. My go-to approach for this is to hack something together with [Requests](http://docs.python-requests.org/en/latest/) and [BeautifulSoup](https://pypi.python.org/pypi/beautifulsoup4), but this was getting tiring. Enter [Cyborg](https://github.com/orf/cyborg), my library that makes writing web scrapers quick and easy.
+I often find myself creating one-off scripts to scrape data off websites for various reasons. My go-to approach for this is to hack something together with [Requests](https://docs.python-requests.org/en/latest/) and [BeautifulSoup](https://pypi.python.org/pypi/beautifulsoup4), but this was getting tiring. Enter [Cyborg](https://github.com/orf/cyborg), my library that makes writing web scrapers quick and easy.
 
 Cyborg is an asyncio-based pipeline orientated scraping framework - in English that means you create a couple of functions to scrape individual parts of a site and throw them together in a sequence, with each of those parts running asynchronously and in parallel. Imagine you had a site with a list of users and you wanted to get the age and profile picture of each of them. Here's how this is done in Cyborg, showing off some of the cool features:
 
@@ -16,14 +16,14 @@ from cyborg import Job, scraper
 from aiopipes.filters import unique
 import sys
 
-@scraper("http://somesite.com/list_of_users")
+@scraper("https://somesite.com/list_of_users")
 def scrape_user_list(data, response, output):
    for user in response.find("#list_of_users > li"):
        yield from output({
            "username": user.get(".username").text
        })
 
-@scraper("http://somesite.com/user/{username}")
+@scraper("https://somesite.com/user/{username}")
 def scrape_user(data, response):
    data['age'] = response.get(".age").text
    data['profile_pic'] = response.get(".pic").attr["href"]

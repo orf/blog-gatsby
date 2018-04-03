@@ -7,7 +7,7 @@ tags:
    - experiments
 ---
 
-American Fuzzy Lop is both a [really cool tool for fuzzing programs](http://lcamtuf.coredump.cx/afl/) and an [adorable breed of bunny](https://www.google.co.uk/search?tbm=isch&source=hp&q=American+Fuzzy+Lop). In this post I'm going to show you how to get the the tool (rather than the rabbit) up and running and find some crashes in the cPython interpreter.
+American Fuzzy Lop is both a [really cool tool for fuzzing programs](https://lcamtuf.coredump.cx/afl/) and an [adorable breed of bunny](https://www.google.co.uk/search?tbm=isch&source=hp&q=American+Fuzzy+Lop). In this post I'm going to show you how to get the the tool (rather than the rabbit) up and running and find some crashes in the cPython interpreter.
 
 ![](./ezgif.com-optimize_M5HXENUA.gif)
 
@@ -21,7 +21,7 @@ Fuzz testing or fuzzing is a software testing technique, often automated or semi
 
 In laments terms it might be the equivalent of "throwing enough shit at a wall and to see what sticks". For example if you have a program that plays MP3 files written in an unsafe language like C/C++ fuzzing might involve taking a valid MP3 file and changing parts of the file and then attempting to play it. If the MP3 player works correctly any invalid files will result in an error, whereas if it is coded incorrectly the program will crash. Repeat this 1,000,000 times and you might find a lot of different bugs.
 
-That's the long and short of it. AFL has [some really clever tricks up its sleeve](http://lcamtuf.blogspot.co.uk/2014/08/binary-fuzzing-strategies-what-works.html) to make this process more efficient to the point where it can [make up JPEG images from just running a JPEG parser](http://lcamtuf.blogspot.co.uk/2014/11/pulling-jpegs-out-of-thin-air.html) or [write valid Bash scripts](http://lcamtuf.blogspot.co.uk/2014/10/bash-bug-how-we-finally-cracked.html). That's pretty awesome and made me want to have a crack at the Python, specifically the cPython interpreter.
+That's the long and short of it. AFL has [some really clever tricks up its sleeve](https://lcamtuf.blogspot.co.uk/2014/08/binary-fuzzing-strategies-what-works.html) to make this process more efficient to the point where it can [make up JPEG images from just running a JPEG parser](https://lcamtuf.blogspot.co.uk/2014/11/pulling-jpegs-out-of-thin-air.html) or [write valid Bash scripts](https://lcamtuf.blogspot.co.uk/2014/10/bash-bug-how-we-finally-cracked.html). That's pretty awesome and made me want to have a crack at the Python, specifically the cPython interpreter.
 
 ### Setting up afl-fuzz
 
@@ -30,7 +30,7 @@ For best results use Linux - OSX has some performance issues that make afl reall
 Downloading and compiling afl was really painless. Other than `build-essential` I didn't have to install any dependencies.
 
     ➜ ~ sudo apt-get install build-essential
-    ➜ ~ wget http://lcamtuf.coredump.cx/afl/releases/afl-latest.tgz
+    ➜ ~ wget https://lcamtuf.coredump.cx/afl/releases/afl-latest.tgz
     ➜ ~ tar xvf afl-latest.tgz && cd afl-2.06b
     ➜ ~ make -j8
 

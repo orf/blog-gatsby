@@ -14,7 +14,7 @@ handling several Hacker news storms where other sites would simply give up.
 But,times have changed. Static blogs are all the rage now,and Simple just isn't cool anymore. Also since Persona shut 
 down I couldn't even log into the bloody thing and could not really be bothered to update it.
 
-So this is my new blog. It's built with [Gatsby](http://gatsbyjs.org/) and deployed with [Netlify](https://netlify.com). 
+So this is my new blog. It's built with [Gatsby](https://gatsbyjs.org/) and deployed with [Netlify](https://netlify.com). 
 It's been an absolute pleasure to develop and deploy, you can view the whole source
 code here: https://github.com/orf/blog-gatsby. With Netlify you just push, and it rebuilds the site and deploys it in 
 about 50 seconds. 

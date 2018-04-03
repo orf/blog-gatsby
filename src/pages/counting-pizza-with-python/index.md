@@ -19,7 +19,7 @@ Below is a graph of the data I collected over a 2 weeks of monitoring the Domino
 
 After you order a delicious (if a bit expensive) Dominoes pizza you have the option to track your order as it is being cooked and delivered. After opening up Chrome's dev tools I noticed that it was making a request to the following URL:
 
-`http://www.dominos.co.uk/Questionnaire/GetPizzaTrackerStatus?orderId=12345`
+`https://www.dominos.co.uk/Questionnaire/GetPizzaTrackerStatus?orderId=12345`
 
 This URL returns a JSON response with some information that was used to update the tracker, such as the status (cooking, prepared, out for delivery etc). While I was writing my dissertation I ordered a few too many pizzas over a couple of weeks and I noticed that the `orderId` parameter was just an incrementing number. I also discovered that it wasn't tied to a users session so you could send any arbitrary order ID in the parameter and get the status of that order.
 
@@ -32,7 +32,7 @@ start = 1234 # The orderID of a yummy pizza you have literally just brought
 current = start
 
 def order_exists(id):
-    resp = requests.get("http://www.dominos.co.uk/Questionnaire/GetPizzaTrackerStatus?orderId={0}".format(id))
+    resp = requests.get("https://www.dominos.co.uk/Questionnaire/GetPizzaTrackerStatus?orderId={0}".format(id))
     if resp.status == 404:
         return False
     return True

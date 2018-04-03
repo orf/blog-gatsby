@@ -6,7 +6,7 @@ tags:
    - experiments
 ---
 
-Sometimes python related questions pop into my head, like [how slow are Django templates](http://tomforb.es/just-how-slow-are-django-templates) or how [hard would it be to inline Python function calls](http://tomforb.es/automatically-inline-python-function-calls) and I usually end up spending a couple of hours trying to answer them. The question that conveniently popped into my head yesterday as I was trying to avoid revising was *"How much code is there in the [Python Packaging Index](https://pypi.python.org/pypi), and how hard is it to count?"*
+Sometimes python related questions pop into my head, like [how slow are Django templates](https://tomforb.es/just-how-slow-are-django-templates) or how [hard would it be to inline Python function calls](https://tomforb.es/automatically-inline-python-function-calls) and I usually end up spending a couple of hours trying to answer them. The question that conveniently popped into my head yesterday as I was trying to avoid revising was *"How much code is there in the [Python Packaging Index](https://pypi.python.org/pypi), and how hard is it to count?"*
 
 This seemed like a nice distraction from real work, so I set about trying to answer it. I will quickly run through how I made a program to answer this question, then present some statistics I gathered.
 
@@ -21,13 +21,13 @@ PyPi exposes an XML-RPC API that anyone can use. Retrieving a list of all regist
 
 ~~~~python
 import xmlrpclib
-client = xmlrpclib.ServerProxy('http://pypi.python.org/pypi')
+client = xmlrpclib.ServerProxy('https://pypi.python.org/pypi')
 all_packages = client.list_packages()
 ~~~~
 
 PyPi also exposes a convenient JSON API to retrieve data about a package. You can access this by simply appending a "/json" onto the end of any package page, for example [https://pypi.python.org/pypi/Django/json](https://pypi.python.org/pypi/Django/json) retrieves a JSON object describing the Django package. This object contains metadata about the package as well as the latest download URL's.
 
-You can then find a suitable release (source distribution preferred), download it to a temporary file and extract it. Once its extracted a program like [CLOC](http://cloc.sourceforge.net/) can be run over the source tree to count the number of lines of code. You can find [my attempt at this program here](https://gist.github.com/orf/ce92408539d8379de55a#file-pypi_counter-py).
+You can then find a suitable release (source distribution preferred), download it to a temporary file and extract it. Once its extracted a program like [CLOC](https://cloc.sourceforge.net/) can be run over the source tree to count the number of lines of code. You can find [my attempt at this program here](https://gist.github.com/orf/ce92408539d8379de55a#file-pypi_counter-py).
 
 I ran the above script and after a couple of hours it had parsed every Python package it could, then I did some ad-hoc analysis on the data.
 
@@ -44,7 +44,7 @@ It should be noted that CLOC is not perfect at detecting languages. I highly dou
 
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/static/modules/gviz/1.0/chart.js"> {"dataSourceUrl":"//docs.google.com/a/tomforb.es/spreadsheet/tq?key=0ArR3Zvt64iZfdFpoMHJUaDN6ck5ST0tkT09NU05iX2c&transpose=0&headers=1&range=A6%3AB10&gid=1&pub=1","options":{"vAxes":[{"useFormatFromData":true,"title":null,"minValue":null,"viewWindow":{"max":null,"min":null},"maxValue":null},{"useFormatFromData":true,"minValue":null,"viewWindow":{"max":null,"min":null},"maxValue":null}],"titleTextStyle":{"bold":true,"color":"#000","fontSize":16},"booleanRole":"certainty","title":"PyPi Package release types","height":371,"animation":{"duration":500},"legend":"right","hAxis":{"useFormatFromData":true,"minValue":null,"viewWindowMode":null,"viewWindow":null,"maxValue":null},"isStacked":false,"tooltip":{}},"state":{},"view":{},"isDefaultVisualization":false,"chartType":"ColumnChart","chartName":"Chart2"} </script>
 
-Source distribution is by far the most common Python package format with **32,490** packages. The [Wheel](http://wheel.readthedocs.org/en/latest/) format is starting to appear but still has a long way to go with only **318** releases.
+Source distribution is by far the most common Python package format with **32,490** packages. The [Wheel](https://wheel.readthedocs.org/en/latest/) format is starting to appear but still has a long way to go with only **318** releases.
 
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/static/modules/gviz/1.0/chart.js"> {"dataSourceUrl":"//docs.google.com/a/tomforb.es/spreadsheet/tq?key=0ArR3Zvt64iZfdFpoMHJUaDN6ck5ST0tkT09NU05iX2c&transpose=0&headers=1&range=A5%3AB14&gid=2&pub=1","options":{"titleTextStyle":{"bold":true,"color":"#000","fontSize":16},"vAxes":[{"useFormatFromData":true,"minValue":null,"viewWindow":{"min":null,"max":null},"maxValue":null},{"useFormatFromData":true,"minValue":null,"viewWindow":{"min":null,"max":null},"maxValue":null}],"pieHole":0,"title":"Package Homepage Locations","booleanRole":"certainty","height":371,"animation":{"duration":0},"colors":["#3366CC","#DC3912","#FF9900","#109618","#990099","#0099C6","#DD4477","#66AA00","#B82E2E","#316395","#994499","#22AA99","#AAAA11","#6633CC","#E67300","#8B0707","#651067","#329262","#5574A6","#3B3EAC","#B77322","#16D620","#B91383","#F4359E","#9C5935","#A9C413","#2A778D","#668D1C","#BEA413","#0C5922","#743411"],"is3D":false,"hAxis":{"title":"Horizontal axis title","useFormatFromData":true,"minValue":null,"viewWindow":{"min":null,"max":null},"maxValue":null},"tooltip":{}},"state":{},"view":{},"isDefaultVisualization":false,"chartType":"PieChart","chartName":"Chart3"} </script>
 

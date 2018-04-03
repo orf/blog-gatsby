@@ -11,7 +11,7 @@ I like things to be simple. So I wrote my own blog software to replace the rathe
 __Simple__ uses MarkDown to format posts, an aims to be as simple as possible. It consists of a single Python file with a few external resources (css, js and templates), and it has very few dependencies. The footprint on the server is incredibly low and the response time is better than that of WordPress running on Apache. Best of all it doesn't require some big database server like MySQL or PostgreSQL, it runs off a simple Sqlite database file.
 
 When you type a post you appear to type directly on the page, there is no annoying WYSIWYG editor to get in the way:
-![Draft](http://i.imgur.com/T9BX4.png)
+![Draft](https://i.imgur.com/T9BX4.png)
 
 Posts are arranged into two groups: drafts and non-drafts. You can slowly start work on several ideas at once, and once they form into proper posts publish them to the frontpage.
 

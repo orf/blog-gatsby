@@ -31,7 +31,7 @@ def test():
     pass
 
 import urllib
-urllib.urlopen("http://google.com")
+urllib.urlopen("https://google.com")
 </pre>
 ```
 
@@ -42,7 +42,7 @@ def <span class="hljs-function"><span class="hljs-title">test</span><span class=
     pass
 
 import urllib
-urllib.<span class="hljs-function"><span class="hljs-title">urlopen</span><span class="hljs-params">(<span class="hljs-string">"http://google.com"</span>)</span></span>
+urllib.<span class="hljs-function"><span class="hljs-title">urlopen</span><span class="hljs-params">(<span class="hljs-string">"https://google.com"</span>)</span></span>
 ```
 
 ### So how does wordinserter highlight code?
@@ -55,7 +55,7 @@ def test():
     pass
 
 import urllib
-urllib.urlopen("http://google.com")
+urllib.urlopen("https://google.com")
 </pre>
 ```
 

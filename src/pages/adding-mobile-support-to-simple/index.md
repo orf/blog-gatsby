@@ -6,9 +6,9 @@ tags:
     - simple
 ---
 
-Last week I finally got round to adding support for mobile devices to [Simple](https://github.com/orf/simple) (the software that powers this blog). I thought I would write a quick post about getting a mobile version of your site up and running using [Bootstrap](http://twitter.github.com/bootstrap/) from Twitter without changing much code at all.
+Last week I finally got round to adding support for mobile devices to [Simple](https://github.com/orf/simple) (the software that powers this blog). I thought I would write a quick post about getting a mobile version of your site up and running using [Bootstrap](https://twitter.github.com/bootstrap/) from Twitter without changing much code at all.
 
-When including the responsive version of Bootstrap in a page it exposes a few classes you can use to modify the displayed content of the page depending on if the device that is viewing the page is a computer, tablet or phone: visible-phone, visible-tablet, visible-desktop (and hidden-* counterparts). These classes work by using [CSS Media Queries](http://cssmediaqueries.com/) to detect the display size of the screen - you can have a play with the default bootstrap values [here](http://twitter.github.com/bootstrap/scaffolding.html#responsive) by re-sizing your browser window.
+When including the responsive version of Bootstrap in a page it exposes a few classes you can use to modify the displayed content of the page depending on if the device that is viewing the page is a computer, tablet or phone: visible-phone, visible-tablet, visible-desktop (and hidden-* counterparts). These classes work by using [CSS Media Queries](https://cssmediaqueries.com/) to detect the display size of the screen - you can have a play with the default bootstrap values [here](https://twitter.github.com/bootstrap/scaffolding.html#responsive) by re-sizing your browser window.
 
 Integrating these with Simple was ridiculously easy: Add a hidden-phone class to the sidebar and other small elements and a visible-phone to a smaller header which appears above the post rather than as a sidebar. One thing that did stump me for a while is you have to add this tag inside the head of the page:
 

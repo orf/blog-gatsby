@@ -10,7 +10,7 @@ A few people asked me to put the website code up, so you can find it here: [http
 
 If you haven't used Python before then I really recommend it. To get the website up and running follow these steps:
 
-   * [Download Python 2.7.6 here](http://www.python.org/download/releases/2.7.6/) and install
+   * [Download Python 2.7.6 here](https://www.python.org/download/releases/2.7.6/) and install
    * Download [PIP (a python package installer) from here](https://pypi.python.org/packages/source/p/pip/pip-1.4.1.tar.gz#md5=6afbb46aeb48abac658d4df742bff714)
    * Extract, and run "python setup.py install" from within the directory. If you get an error complaining that "python" doesn't exist then you need to add C:\python27 to your system path. Give it a google for detailed instructions.
    * Once that's finished just run "pip install flask"

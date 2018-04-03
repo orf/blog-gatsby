@@ -43,7 +43,7 @@ dis.dis(call_func_args)
 The dis function prints out the bytecode operations for a Python function, which shows that the call_func_args function has been modified so that the add_stuff() call never takes place and instead the body of the add_stuff function has been inlined inside the call_func_args function. I've put the [code on GitHub](https://github.com/orf/inliner), have a look if you like. Below I will explain how it works, for those interested.
 
 #### Diving in: Import hooks and the AST module
-Python is an interpreted language, when you run a Python program the source code is parsed into an Abstract Syntax Tree which is then 'compiled' into bytecode. We need a way of modifying the AST of an imported module before it gets compiled, and as luck would have it Python provides [powerful hooks](http://www.python.org/dev/peps/pep-0302/) into the import mechanism that allow you to write importers that [grab code from the internet](http://blog.dowski.com/2008/07/31/customizing-the-python-import-system/) or [restrict packages from being imported](http://journal.thobe.org/2008/07/simple-stuff-with-import-hooks-in.html). Getting our claws into the import mechanism is as simple as this:
+Python is an interpreted language, when you run a Python program the source code is parsed into an Abstract Syntax Tree which is then 'compiled' into bytecode. We need a way of modifying the AST of an imported module before it gets compiled, and as luck would have it Python provides [powerful hooks](https://www.python.org/dev/peps/pep-0302/) into the import mechanism that allow you to write importers that [grab code from the internet](https://blog.dowski.com/2008/07/31/customizing-the-python-import-system/) or [restrict packages from being imported](https://journal.thobe.org/2008/07/simple-stuff-with-import-hooks-in.html). Getting our claws into the import mechanism is as simple as this:
 
 ~~~~python
 import sys, imp
@@ -70,10 +70,10 @@ sys.meta_path.append(Importer())
 Now whenever anything is imported our find_module() method will be called. This should return an object with a load_module() function, which returns the final module.
 
 ##### Modifying the AST
-Python provides an [AST module](http://docs.python.org/3.4/library/ast.html) to modify Python AST trees. So inside our 
+Python provides an [AST module](https://docs.python.org/3.4/library/ast.html) to modify Python AST trees. So inside our 
 `find_module` function we can get the source code of the module we are importing, parse it into an AST representation and then modify it before compiling it. You can see this in [action here](https://github.com/orf/inliner/blob/master/inliner/import_hook.py#L24).
 
-First we need to find all functions that are wrapped by our inline decorator, which is pretty simple to do. The AST module provides a NodeVisitor and a NodeTransformer class you can subclass. For [each different type of AST node](http://greentreesnakes.readthedocs.org/en/latest/nodes.html) a visit_NAME method will be called, which you can then choose to modify or pass along untouched. The InlineMethodLocator runs through all the function definition's in a tree and stores any that are wrapped by our inline decorator:
+First we need to find all functions that are wrapped by our inline decorator, which is pretty simple to do. The AST module provides a NodeVisitor and a NodeTransformer class you can subclass. For [each different type of AST node](https://greentreesnakes.readthedocs.org/en/latest/nodes.html) a visit_NAME method will be called, which you can then choose to modify or pass along untouched. The InlineMethodLocator runs through all the function definition's in a tree and stores any that are wrapped by our inline decorator:
 
 ~~~~python
 class InlineMethodLocator(ast.NodeVisitor):

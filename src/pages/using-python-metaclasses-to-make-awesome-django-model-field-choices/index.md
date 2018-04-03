@@ -47,7 +47,7 @@ class Student(models.Model):
 freshers = Student.objects.filter(year_in_school=YearInSchool.FRESHMAN).all()
 ~~~~
 
-Well with a bit of metaclass magic you can. A [metaclass in python](http://stackoverflow.com/questions/100003/what-is-a-metaclass-in-python?answertab=votes#tab-top) is a class who's instances __are__ classes instead of instances __of__ classes. Kind of. If you are confused by that then have a look at this example code:
+Well with a bit of metaclass magic you can. A [metaclass in python](https://stackoverflow.com/questions/100003/what-is-a-metaclass-in-python?answertab=votes#tab-top) is a class who's instances __are__ classes instead of instances __of__ classes. Kind of. If you are confused by that then have a look at this example code:
 
 ~~~~python
 class Choice(object):

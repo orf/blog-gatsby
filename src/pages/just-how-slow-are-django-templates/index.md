@@ -10,7 +10,7 @@ tags:
 
 *Edit: It appears that Django does have some form of [template caching](https://docs.djangoproject.com/en/dev/ref/templates/api/#django.template.loaders.cached.Loader). The graphs have been updated to include this.*
 
-I've always kind of known that [Django templates](https://docs.djangoproject.com/en/1.5/ref/templates/) are kind of slow compared to [Jinja2](http://jinja.pocoo.org/docs/) but I have never been bothered enough to test them head to head, until now. *Note:* This isn't an attack on Django, and if you haven't tried it already its well worth a go. Speed of execution is not everything, and template rendering is only one component, optimizing network and database time is often more fruitful.
+I've always kind of known that [Django templates](https://docs.djangoproject.com/en/1.5/ref/templates/) are kind of slow compared to [Jinja2](https://jinja.pocoo.org/docs/) but I have never been bothered enough to test them head to head, until now. *Note:* This isn't an attack on Django, and if you haven't tried it already its well worth a go. Speed of execution is not everything, and template rendering is only one component, optimizing network and database time is often more fruitful.
 
 #### Jinja2 or Django?
 I have heard good things about Jinja2 with regards to performance, mostly because Jinja2 compiles templates down to Python bytecode during rendering, so the template only needs to be parsed once. Django does no such thing (as far as I know), and thus I would assume it would be slower.
@@ -23,7 +23,7 @@ I created two basic applications: [howslow_django](https://github.com/orf/howslo
  * [Stackoverflow's homepage](https://github.com/orf/howslow_django/blob/master/templates/stackoverflow_homepage.html)
  * [The results page](https://github.com/orf/howslow_django/blob/master/templates/results.html)
 
-It tests the speed by timing how long it takes to render each template 100 times, then rendering it once while profiling (using the [cProfile module](http://docs.python.org/2/library/profile.html)). I believe these templates are enough to test the efficiency of each templating library, but the tests *are* synthetic - your mileage may vary. The stackoverflow homepage weighs in at over 200kb, this is included to see if any of the libraries make excessive copies of the template internally and to see if this effects the performance.
+It tests the speed by timing how long it takes to render each template 100 times, then rendering it once while profiling (using the [cProfile module](https://docs.python.org/2/library/profile.html)). I believe these templates are enough to test the efficiency of each templating library, but the tests *are* synthetic - your mileage may vary. The stackoverflow homepage weighs in at over 200kb, this is included to see if any of the libraries make excessive copies of the template internally and to see if this effects the performance.
 
 #### Hardware/Software
 I ran the tests on my laptop and a Linux VPS that hosts this blog. My laptop runs Windows 8 and has 6gb of RAM and an i7 running at 2.4ghz, while the blog has 1.5gb of RAM and 2 virtual cores (running on an i7 920). The tests were run on cPython 2.7 with Django 1.5 and Flask 0.9 (the latest, at the time of writing). Debug was set to False in both applications.

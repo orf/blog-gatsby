@@ -29,9 +29,9 @@ from comtypes.gen import Word as constants
 markdown = """
 ### This is a title
 
-![I go below the image as a caption](http://placehold.it/150x150)
+![I go below the image as a caption](https://placehold.it/150x150)
 
-*This is **some** text* in a [paragraph](http://google.com)
+*This is **some** text* in a [paragraph](https://google.com)
 
   * Boo! I'm a **list**
 """

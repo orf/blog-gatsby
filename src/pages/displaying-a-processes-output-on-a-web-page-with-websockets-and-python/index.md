@@ -6,7 +6,7 @@ tags:
     - experiments
 ---
 
-A few days ago a colleague of mine asked me how you would pipe the standard output of a process into a browser. I hacked around for a few hours and came up with a websockets based solution (using [Twisted](http://www.twistedmatrix.com) and [Autobahn.ws](http://autobahn.ws/python)) that you can see below (**Your browser needs to support WebSockets, sorry IE9 and lower**).
+A few days ago a colleague of mine asked me how you would pipe the standard output of a process into a browser. I hacked around for a few hours and came up with a websockets based solution (using [Twisted](https://www.twistedmatrix.com) and [Autobahn.ws](https://autobahn.ws/python)) that you can see below (**Your browser needs to support WebSockets, sorry IE9 and lower**).
 
 This is a live instant-updating tail of this sites web logs (tail -F access_log) with IP addresses omitted:
 
@@ -22,7 +22,7 @@ All of this happens inside Twisted's event loop, which is pretty cool because it
 Overall I'm pretty impressed with Autobahn, even though the docs are a bit crap.
 
 ### How to use:
-Grab the code from [the Github repo](https://github.com/orf/websocket_stdout_example). You need to install [Twisted](http://twistedmatrix.com/) and [AutoBahn](https://pypi.python.org/pypi/autobahn), and if you are running this on Windows you also require [PyWin32](http://sourceforge.net/projects/pywin32/). Once those are all installed you can run the script like so:
+Grab the code from [the Github repo](https://github.com/orf/websocket_stdout_example). You need to install [Twisted](https://twistedmatrix.com/) and [AutoBahn](https://pypi.python.org/pypi/autobahn), and if you are running this on Windows you also require [PyWin32](https://sourceforge.net/projects/pywin32/). Once those are all installed you can run the script like so:
 
     python runner.py [shell command to run]
 
@@ -75,7 +75,7 @@ class ProcessProtocol(protocol.ProcessProtocol):
         print "Error: %s" % data
 
 
-# http://autobahn.ws/python
+# https://autobahn.ws/python
 class WebSocketProcessOutputterThing(WebSocketServerProtocol):
     """ I handle a single connected client. We don't need to do much here, simply call the register and un-register
     functions when needed.

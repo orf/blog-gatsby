@@ -9,7 +9,7 @@ tags:
 
 *tl;dr The timetable system sucks, so I [made one that works](#an-alternative)*
 
-Getting your timetable sorted at Uni has never been fun. In years 1 and 2 of my study the department posted a timetable for each year showing all modules and students were expected to remove the classes they did not take, which while not the best system it did seem to work fine. However this year the Uni has a [timetabling website that you can use](http://sws.hull.ac.uk/default.aspx) to create a timetable for the modules that you take, and in theory this is a good idea - students can connect to the website, enter the modules they take and get a personalized up-to-date timetable that they can use.
+Getting your timetable sorted at Uni has never been fun. In years 1 and 2 of my study the department posted a timetable for each year showing all modules and students were expected to remove the classes they did not take, which while not the best system it did seem to work fine. However this year the Uni has a [timetabling website that you can use](https://sws.hull.ac.uk/default.aspx) to create a timetable for the modules that you take, and in theory this is a good idea - students can connect to the website, enter the modules they take and get a personalized up-to-date timetable that they can use.
 
 The implementation of the timetable website is horrendous for the following reasons:
 
@@ -24,12 +24,12 @@ The implementation of the timetable website is horrendous for the following reas
 I thought systems like this were supposed to make things easier? It seems like nobody who designed the timetabling system put any thought into the user interface.
 
 ### An alternative
-Annoyed by all these issues (and more) I wondered how hard it would be to write an improved version that fixes all of those issues. It turns out not hard at all - you can view it live here: [timetables.tomforb.es](http://timetables.tomforb.es/).
+Annoyed by all these issues (and more) I wondered how hard it would be to write an improved version that fixes all of those issues. It turns out not hard at all - you can view it live here: [timetables.tomforb.es](https://timetables.tomforb.es/).
 
 The system I have come up with fixes all of the issues described above:
 
    1. It's fast: Timetables are created in milliseconds, not seconds.
-   2. Filtering modules is awesome: It uses the awesome [Select2](http://ivaynberg.github.io/select2/) library to make filtering modules quick and easy. Module titles are also included in the list.
+   2. Filtering modules is awesome: It uses the awesome [Select2](https://ivaynberg.github.io/select2/) library to make filtering modules quick and easy. Module titles are also included in the list.
    3. Mobile: The site is built responsively so it looks good on both desktops and mobiles. If you view a timetable in a mobile interface you get an accordion of days and times, while in a desktop you get a full single timetable containing all of the classes. Try it by re-sizing your browser.
    4. Hard links: You can bookmark your timetable to easily refer to it later.
    5. One big timetable: Lectures are displayed in a single timetable rather than by module.

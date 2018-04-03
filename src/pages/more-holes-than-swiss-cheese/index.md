@@ -10,10 +10,10 @@ tl;dr Never trust user input.
 
 *Note: Before I published this I contacted [the owner](https://en.wikipedia.org/wiki/Andy_Hertzfeld) of the site and he has since replaced it with a new and more secure version*
 
-When I browse the net I often see the hallmarks of a security issue with websites that I visit, and little alarm bells go off in my head. I was recently browsing a site called [folklore.org](http://www.folklore.org/), which documents folklore regarding the early days of Apple, when these bells started going off big time. I found many classic security issues on the site (and managed to get a shell) and this post explains the how I found them as well as what you can do to prevent these exploits.
+When I browse the net I often see the hallmarks of a security issue with websites that I visit, and little alarm bells go off in my head. I was recently browsing a site called [folklore.org](https://www.folklore.org/), which documents folklore regarding the early days of Apple, when these bells started going off big time. I found many classic security issues on the site (and managed to get a shell) and this post explains the how I found them as well as what you can do to prevent these exploits.
 
 ### Local file inclusion, arbitrary writing of files insecure file uploads
-These are the most interesting exploit I found. The first thing I noticed about the site was that a filename appeared in a GET parameter - this is a classic sign of a [File Inclusion Vulnerability](http://en.wikipedia.org/wiki/File_inclusion_vulnerability). You can generally test if the website sanitizes the filename correctly by doing this:
+These are the most interesting exploit I found. The first thing I noticed about the site was that a filename appeared in a GET parameter - this is a classic sign of a [File Inclusion Vulnerability](https://en.wikipedia.org/wiki/File_inclusion_vulnerability). You can generally test if the website sanitizes the filename correctly by doing this:
 
 ![](./possible_LFI_KSQFBUZW.png)
 
@@ -38,7 +38,7 @@ I thought I could create an article called ../../HackedView.py and fill it with 
 This shell simply displays a directory listing. I uploaded another one that let me read files, and I could then access the entire sites source code. Securing uploads is a must on any web application - ensure uploaded files are not executable (chmod) and have a proper extension (nobody needs to upload .php files to an image gallery).
 
 ### Cross Site Scripting
-[Cross Site Scripting](http://en.wikipedia.org/wiki/Cross-site_scripting) (or XSS for short) is the [second most dangerous web-app security issue](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project), and it's very common. When you accept input from a user that is possibly going to be displayed to them in the future, like a comment, or in the response to the request then it should always be sanitized and stripped of HTML tags. Code like the PHP below is vulnerable to XSS because a user could send the name "&lt;script&gt;alert('hello there')&lt;/script&gt;" which would cause an alert box to pop up on their screen. 
+[Cross Site Scripting](https://en.wikipedia.org/wiki/Cross-site_scripting) (or XSS for short) is the [second most dangerous web-app security issue](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project), and it's very common. When you accept input from a user that is possibly going to be displayed to them in the future, like a comment, or in the response to the request then it should always be sanitized and stripped of HTML tags. Code like the PHP below is vulnerable to XSS because a user could send the name "&lt;script&gt;alert('hello there')&lt;/script&gt;" which would cause an alert box to pop up on their screen. 
 
     <?php echo "Hello " . $_GET['name'] ?>
 

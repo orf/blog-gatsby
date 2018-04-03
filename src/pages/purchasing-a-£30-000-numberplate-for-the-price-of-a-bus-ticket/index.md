@@ -6,7 +6,7 @@ tags:
    - security
 ---
 
-[Regtransfers.co.uk](http://regtransfers.co.uk) is a website that allows you to purchase customized numberplates for your car or motorbike. They boast a large number of famous clients and short numberplates are often on sale for upwards of £20,000 (the plate ABC 4 is up for £30,000). While playing with their site I discovered a flaw that would allow anybody to purchase that ABC 4 plate for an arbitrary price. As always I waited until the issue was fixed on the site before publishing this post.
+[Regtransfers.co.uk](https://regtransfers.co.uk) is a website that allows you to purchase customized numberplates for your car or motorbike. They boast a large number of famous clients and short numberplates are often on sale for upwards of £20,000 (the plate ABC 4 is up for £30,000). While playing with their site I discovered a flaw that would allow anybody to purchase that ABC 4 plate for an arbitrary price. As always I waited until the issue was fixed on the site before publishing this post.
 
 #### The order process
 The order process is simple and painless. You search for a numberplate and browse ones available for purchase. Once you have found one that you like you select "Buy" and you are taken to a page where you can enter your personal details:
