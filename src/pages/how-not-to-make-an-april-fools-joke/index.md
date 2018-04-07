@@ -24,6 +24,7 @@ The recommended way of removing it is re-flashing your device or executing a com
 
 I've got nothing against april fools jokes, but this one is pretty ridiculous. Firstly, there is no context: Why is the
 notification an alert one? Why the hell is it in pirate-speak **for no reason**? Why can't you get rid of it without
-rooting your device?
+rooting your device? Also, if it's an april fools joke, *where is the humour*. Pirate speak by itself isn't funny.
 
 This just seems really quite user-hostile and I'm not impressed.
+[Neither are other people](https://www.reddit.com/r/LineageOS/comments/89f76y/can_we_have_a_serious_talk_about_april_fools/)
