@@ -77,7 +77,6 @@ module.exports = {
                 pathToConfigModule: 'src/utils/typography',
             },
         },
-        `gatsby-plugin-netlify`,
         {
             resolve: `gatsby-plugin-nprogress`,
             options: {
@@ -88,9 +87,7 @@ module.exports = {
             },
         },
         `gatsby-plugin-sitemap`,
-        'gatsby-plugin-catch-links',
         `gatsby-plugin-remove-trailing-slashes`,
-        `gatsby-plugin-nprogress`,
         {
             resolve: `gatsby-plugin-favicon`,
             options: {
