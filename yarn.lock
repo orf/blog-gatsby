@@ -1395,7 +1395,7 @@ bignumber.js@^2.1.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/bignumber.js/-/bignumber.js-2.4.0.tgz#838a992da9f9d737e0f4b2db0be62bb09dd0c5e8"
 
-bin-build@^2.2.0:
+bin-build@^2.0.0, bin-build@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/bin-build/-/bin-build-2.2.0.tgz#11f8dd61f70ffcfa2bdcaa5b46f5e8fedd4221cc"
   dependencies:
@@ -4346,7 +4346,24 @@ gatsby-plugin-remove-trailing-slashes@^1.0.3:
   dependencies:
     babel-runtime "^6.26.0"
 
-gatsby-plugin-sharp@1.6.41, gatsby-plugin-sharp@^1.6.41:
+gatsby-plugin-sharp@1.6.42:
+  version "1.6.42"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-1.6.42.tgz#c2c900ca80ff2b19d3c56ba8dcfb24fbd664d397"
+  dependencies:
+    async "^2.1.2"
+    babel-runtime "^6.26.0"
+    bluebird "^3.5.0"
+    imagemin "^5.2.2"
+    imagemin-pngquant "5.0.1"
+    imagemin-webp "^4.0.0"
+    lodash "^4.17.4"
+    potrace "^2.1.1"
+    probe-image-size "^3.2.0"
+    progress "^1.1.8"
+    sharp "^0.20.0"
+    svgo "^0.7.2"
+
+gatsby-plugin-sharp@^1.6.41:
   version "1.6.41"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-1.6.41.tgz#87dc28d226d70e63408bf31983268efdf10e8b1d"
   dependencies:
@@ -5440,6 +5457,14 @@ image-size@^0.4.0:
 image-size@^0.5.0:
   version "0.5.5"
   resolved "https://registry.yarnpkg.com/image-size/-/image-size-0.5.5.tgz#09dfd4ab9d20e29eb1c3e80b8990378df9e3cb9c"
+
+imagemin-pngquant@5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/imagemin-pngquant/-/imagemin-pngquant-5.0.1.tgz#d8a329da553afa226b11ce62debe0b7e37b439e6"
+  dependencies:
+    exec-buffer "^3.0.0"
+    is-png "^1.0.0"
+    pngquant-bin "^3.0.0"
 
 imagemin-pngquant@^5.0.0:
   version "5.1.0"
@@ -7971,6 +7996,14 @@ pn@^1.0.0:
 pngjs@^3.0.0, pngjs@^3.2.0:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/pngjs/-/pngjs-3.3.2.tgz#097c3c2a75feb223eadddea6bc9f0050cf830bc3"
+
+pngquant-bin@^3.0.0:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/pngquant-bin/-/pngquant-bin-3.1.1.tgz#d124d98a75a9487f40c1640b4dbfcbb2bd5a1fd1"
+  dependencies:
+    bin-build "^2.0.0"
+    bin-wrapper "^3.0.0"
+    logalot "^2.0.0"
 
 pngquant-bin@^4.0.0:
   version "4.0.0"
