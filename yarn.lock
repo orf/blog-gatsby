@@ -1395,7 +1395,7 @@ bignumber.js@^2.1.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/bignumber.js/-/bignumber.js-2.4.0.tgz#838a992da9f9d737e0f4b2db0be62bb09dd0c5e8"
 
-bin-build@^2.2.0:
+bin-build@^2.0.0, bin-build@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/bin-build/-/bin-build-2.2.0.tgz#11f8dd61f70ffcfa2bdcaa5b46f5e8fedd4221cc"
   dependencies:
@@ -4263,9 +4263,9 @@ gatsby-cli@^1.1.50:
     yargs "^8.0.2"
     yurnalist "^0.2.1"
 
-gatsby-image@1.0.43:
-  version "1.0.43"
-  resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-1.0.43.tgz#aac992fbbe0793bd37a333d6a5da63a2c4d2a2dd"
+gatsby-image@1.0.45:
+  version "1.0.45"
+  resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-1.0.45.tgz#2b909e00dbdd6386872a1a6909d39ded49930ac4"
   dependencies:
     babel-runtime "^6.26.0"
     prop-types "^15.6.0"
@@ -4315,9 +4315,9 @@ gatsby-plugin-google-analytics@1.0.28:
   dependencies:
     babel-runtime "^6.26.0"
 
-gatsby-plugin-manifest@1.0.17:
-  version "1.0.17"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-1.0.17.tgz#6d4093bbc7aa72d94fd8e67695b5d4a5a7214c46"
+gatsby-plugin-manifest@1.0.18:
+  version "1.0.18"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-1.0.18.tgz#b8eedfa71dbd88a2558e49830968eb9e18711796"
   dependencies:
     babel-runtime "^6.26.0"
     bluebird "^3.5.0"
@@ -4346,7 +4346,24 @@ gatsby-plugin-remove-trailing-slashes@^1.0.3:
   dependencies:
     babel-runtime "^6.26.0"
 
-gatsby-plugin-sharp@1.6.41, gatsby-plugin-sharp@^1.6.41:
+gatsby-plugin-sharp@1.6.42:
+  version "1.6.42"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-1.6.42.tgz#c2c900ca80ff2b19d3c56ba8dcfb24fbd664d397"
+  dependencies:
+    async "^2.1.2"
+    babel-runtime "^6.26.0"
+    bluebird "^3.5.0"
+    imagemin "^5.2.2"
+    imagemin-pngquant "5.0.1"
+    imagemin-webp "^4.0.0"
+    lodash "^4.17.4"
+    potrace "^2.1.1"
+    probe-image-size "^3.2.0"
+    progress "^1.1.8"
+    sharp "^0.20.0"
+    svgo "^0.7.2"
+
+gatsby-plugin-sharp@^1.6.41:
   version "1.6.41"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-1.6.41.tgz#87dc28d226d70e63408bf31983268efdf10e8b1d"
   dependencies:
@@ -4363,11 +4380,12 @@ gatsby-plugin-sharp@1.6.41, gatsby-plugin-sharp@^1.6.41:
     sharp "^0.20.0"
     svgo "^0.7.2"
 
-gatsby-plugin-sitemap@1.2.20:
-  version "1.2.20"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sitemap/-/gatsby-plugin-sitemap-1.2.20.tgz#7166e5d59becfa120aaa5f3ad46ecacf4e1f9ac2"
+gatsby-plugin-sitemap@1.2.21:
+  version "1.2.21"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sitemap/-/gatsby-plugin-sitemap-1.2.21.tgz#f3503a7c6f3e848b2b58427aaaf6b22da57a243a"
   dependencies:
     babel-runtime "^6.26.0"
+    minimatch "^3.0.4"
     sitemap "^1.12.0"
 
 gatsby-plugin-typography@1.7.18:
@@ -4454,9 +4472,9 @@ gatsby-remark-smartypants@1.4.12:
     retext-smartypants "^2.0.0"
     unist-util-visit "^1.1.1"
 
-gatsby-source-filesystem@1.5.29:
-  version "1.5.29"
-  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-1.5.29.tgz#27efb1214d8a326f7a1cb8f0cdee579f96a2be69"
+gatsby-source-filesystem@1.5.30:
+  version "1.5.30"
+  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-1.5.30.tgz#d81a9408944405eb9fd90365c6c5102428643537"
   dependencies:
     babel-cli "^6.26.0"
     babel-runtime "^6.26.0"
@@ -4470,9 +4488,9 @@ gatsby-source-filesystem@1.5.29:
     slash "^1.0.0"
     valid-url "^1.0.9"
 
-gatsby-transformer-remark@1.7.39:
-  version "1.7.39"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-remark/-/gatsby-transformer-remark-1.7.39.tgz#1a3e2fcba317c379466ed39cfb1273c5b2737c62"
+gatsby-transformer-remark@1.7.40:
+  version "1.7.40"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-remark/-/gatsby-transformer-remark-1.7.40.tgz#199296ba084c4931be91e5637a7eca13711f212e"
   dependencies:
     babel-runtime "^6.26.0"
     bluebird "^3.5.0"
@@ -5440,6 +5458,14 @@ image-size@^0.4.0:
 image-size@^0.5.0:
   version "0.5.5"
   resolved "https://registry.yarnpkg.com/image-size/-/image-size-0.5.5.tgz#09dfd4ab9d20e29eb1c3e80b8990378df9e3cb9c"
+
+imagemin-pngquant@5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/imagemin-pngquant/-/imagemin-pngquant-5.0.1.tgz#d8a329da553afa226b11ce62debe0b7e37b439e6"
+  dependencies:
+    exec-buffer "^3.0.0"
+    is-png "^1.0.0"
+    pngquant-bin "^3.0.0"
 
 imagemin-pngquant@^5.0.0:
   version "5.1.0"
@@ -7971,6 +7997,14 @@ pn@^1.0.0:
 pngjs@^3.0.0, pngjs@^3.2.0:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/pngjs/-/pngjs-3.3.2.tgz#097c3c2a75feb223eadddea6bc9f0050cf830bc3"
+
+pngquant-bin@^3.0.0:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/pngquant-bin/-/pngquant-bin-3.1.1.tgz#d124d98a75a9487f40c1640b4dbfcbb2bd5a1fd1"
+  dependencies:
+    bin-build "^2.0.0"
+    bin-wrapper "^3.0.0"
+    logalot "^2.0.0"
 
 pngquant-bin@^4.0.0:
   version "4.0.0"
