@@ -21,7 +21,7 @@
     "gatsby-plugin-react-helmet": "2.0.10",
     "gatsby-plugin-remove-serviceworker": "^1.0.0",
     "gatsby-plugin-sharp": "1.6.41",
-    "gatsby-plugin-sitemap": "1.2.20",
+    "gatsby-plugin-sitemap": "1.2.21",
     "gatsby-plugin-typography": "1.7.18",
     "gatsby-remark-autolink-headers": "1.4.16",
     "gatsby-remark-copy-linked-files": "1.5.31",
