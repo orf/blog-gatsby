@@ -4,11 +4,7 @@ os:
   - linux
 
 node_js:
-  - "node"
-  - "lts/*"
-  - "7"
   - "8"
-  - "9"
 
 cache: yarn
 
