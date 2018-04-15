@@ -31,7 +31,7 @@
     "gatsby-remark-responsive-iframe": "1.4.18",
     "gatsby-remark-sequence": "0.0.1",
     "gatsby-remark-smartypants": "1.4.12",
-    "gatsby-source-filesystem": "1.5.31",
+    "gatsby-source-filesystem": "1.5.32",
     "gatsby-transformer-remark": "1.7.40",
     "gatsby-transformer-sharp": "1.6.22",
     "lodash": "^4.17.4",
