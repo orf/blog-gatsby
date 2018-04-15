@@ -14,7 +14,7 @@ There were three ways I could see to do this:
 
 I opted for #3, as #1 is hardly portable and #2 isn't maintainable (for various reasons). Unfortunately Twisted doesn't have built in support for this, so the way I managed it is to check it inside the connectionMade method of the protocol:
 
-~~~~python
+```python
 class AuthenticatingThriftProtocol(TTwisted.ThriftServerProtocol):
 	@defer.inlineCallbacks
 	def connectionMade(self):
@@ -25,7 +25,7 @@ class AuthenticatingThriftProtocol(TTwisted.ThriftServerProtocol):
 	    		self.transport.loseConnection()
 		else:
 	    		self.transport.resumeProducing()
-~~~~
+```
 
 The transport has to be paused while authenticating to stop clients making requests while the authentication process is in progress (Twisted is event driven, so while checkHostAgainstWhitelist is in progress other data could be sent and processed). Once the IP address has been checked then the connection is either dropped if the IP address is not allowed or the transport is resumed, which will process any buffered data sent by the client while it was being authenticated.
 

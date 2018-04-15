@@ -22,12 +22,12 @@ They implemented these restrictions by parsing the Python code into an AST repre
 #### Breaking out
 In Python exception's have a defined hierarchy. The following code is a common way to catch all exceptions while executing some_func():
 
-~~~~python
+```python
 try:
    some_func()
 except Exception:
    pass
-~~~~
+```
 
 This works in most cases as almost all exceptions have Exception as a parent somewhere. However there are a few (MemoryError for one) that inherit only from BaseException and not Exception, and so would not get caught by that code. 
 

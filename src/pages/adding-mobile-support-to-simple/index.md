@@ -12,9 +12,9 @@ When including the responsive version of Bootstrap in a page it exposes a few cl
 
 Integrating these with Simple was ridiculously easy: Add a hidden-phone class to the sidebar and other small elements and a visible-phone to a smaller header which appears above the post rather than as a sidebar. One thing that did stump me for a while is you have to add this tag inside the head of the page:
 
-~~~~html
+```html
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-~~~~
+```
 
 Once you have added that tag to the page head then making a mobile version of the site is as simple as modifying a few element classes. It should be noted that __this is not the best way to make a mobile version of your site__: the entire page is still downloaded to the phone and processed even if only a small portion of it is being displayed. This is a bit of a waste - building a proper mobile version of your site is preferable but this solution works great for Simple, who's pages are pretty small and almost all of the content is displayed on the mobile version.
 

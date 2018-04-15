@@ -19,11 +19,11 @@ For each package in the PyPi repository we need to do the following things:
 
 PyPi exposes an XML-RPC API that anyone can use. Retrieving a list of all registered package names is as simple as:
 
-~~~~python
+```python
 import xmlrpclib
 client = xmlrpclib.ServerProxy('https://pypi.python.org/pypi')
 all_packages = client.list_packages()
-~~~~
+```
 
 PyPi also exposes a convenient JSON API to retrieve data about a package. You can access this by simply appending a "/json" onto the end of any package page, for example [https://pypi.python.org/pypi/Django/json](https://pypi.python.org/pypi/Django/json) retrieves a JSON object describing the Django package. This object contains metadata about the package as well as the latest download URL's.
 

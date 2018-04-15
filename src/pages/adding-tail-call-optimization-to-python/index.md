@@ -8,13 +8,13 @@ tags:
 
 Tail-call optimization is a trick many languages and compilers use to avoid creating excess stack frames when dealing with recursive code like this:
 
-~~~~python
+```python
 def call_1000_times(count=0):
     if count == 1000:
         return True
     else:
         return call_1000_times(count + 1)
-~~~~
+```
 
 This function simply calls itself with modified arguments until a condition is met (the count is 1000) at which point it returns True. Because all the function mostly does is return the result of another function call the stack frame does not need to be kept around in memory and can be disposed of or the parents frame could be re-used.
 
@@ -23,14 +23,14 @@ The reference Python implementation (CPython) does not implement tail-call optim
 ### Pure python tail-call optimization?
 I hacked around for a bit and came up with a pure-python function decorator that will automagically optimize recursive functions like the one below. It appears to be calling itself recursively but its actually doing no such thing else it would hit the recursion limit and explode with an exception:
 
-~~~~python
+```python
 sys.setrecursionlimit(10)
 @tail_call()
 def test_tail_count(count=0):
    return count if count == 7000 else test_tail_count(count + 1)
 >>> print test_tail_count()
 7000
-~~~~
+```
 
 #### How?
 *If you are feeling brave you can view the code here on GitHub: [https://gist.github.com/orf/41746c53b8eda5b988c5](https://gist.github.com/orf/41746c53b8eda5b988c5)*
@@ -50,11 +50,11 @@ This method well and theoretically requires no code changes to the function itse
 ##### Return tuples
 This method is actually slightly faster than normal recursive code according to the benchmarks in the gist above. The test_tail_count function would have to be changed to return a tuple of arguments to be passed to the next call rather than pretending to call itself recursively:
 
-~~~~python
+```python
 @tail_call(tuple_return=True)
 def test_tail_count(count=0):
    return count if count == 7000 else (count + 1, )
-~~~~
+```
 
 This has very little overhead as tuples are pretty cheap to create in Python. However it's not as readable as the first method and I haven't worked out how to support keyword arguments yet.
 

@@ -12,22 +12,22 @@ Lxml is a “pythonic binding for the libxml2 and libxslt libraries” which put
 
 One of the features it provides is the ability to diff two portions of HTML together. For example:
 
-~~~~python
+```python
 from lxml.html.diff import htmldiff
 html_1 = "<p>some text here</p>"
 html_2 = "<p>some more text</p>"
 print htmldiff(html_1, html_2)
 """<p>some <ins>more</ins> text <del>here</del></p>"""
-~~~~
+```
 
 Any text removed is wrapped in a <del\> tag, and any text inserted is wrapped in a <ins\> tag. The bug in question is that htmldiff ignored whitespace in HTML input, meaning things like newlines were lost while diffing:
 
-~~~~python
+```python
 html_1 = "<pre>some text\n new line\n more lines</pre>"
 html_2 = "<pre>some text\n new line</pre>"
 print htmldiff(html_1, html_2)
 """<pre>some text new line <del>more lines</del></pre>"""
-~~~~
+```
 
 For the most part whitespace in HTML can be ignored, but in the case of a <pre\> tag it cannot – this tag is used for displaying preformatted text which means whitespace is respected and needs to be preserved.
 

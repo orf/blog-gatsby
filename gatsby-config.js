@@ -49,13 +49,14 @@ module.exports = {
                             maxWidth: 600,
                         },
                     },
+                    'gatsby-remark-prismjs',
                     {
                         resolve: `gatsby-remark-responsive-iframe`,
                         options: {
                             wrapperStyle: `margin-bottom: 1.0725rem`,
                         },
                     },
-                    'gatsby-remark-prismjs',
+
                     'gatsby-remark-smartypants',
                     `gatsby-remark-autolink-headers`,
                 ],
