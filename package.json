@@ -33,7 +33,7 @@
     "gatsby-remark-smartypants": "1.4.12",
     "gatsby-source-filesystem": "1.5.33",
     "gatsby-transformer-remark": "1.7.40",
-    "gatsby-transformer-sharp": "1.6.22",
+    "gatsby-transformer-sharp": "1.6.23",
     "lodash": "^4.17.4",
     "prismjs": "1.14.0",
     "react-gravatar": "2.6.3",
