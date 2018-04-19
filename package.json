@@ -9,7 +9,7 @@
     "not ie <= 11"
   ],
   "dependencies": {
-    "gatsby": "1.9.252",
+    "gatsby": "1.9.253",
     "gatsby-image": "1.0.46",
     "gatsby-link": "1.6.41",
     "gatsby-plugin-canonical-urls": "1.0.17",
