@@ -11,7 +11,7 @@
   "dependencies": {
     "gatsby": "1.9.252",
     "gatsby-image": "1.0.46",
-    "gatsby-link": "1.6.40",
+    "gatsby-link": "1.6.41",
     "gatsby-plugin-canonical-urls": "1.0.17",
     "gatsby-plugin-favicon": "2.1.1",
     "gatsby-plugin-feed": "1.3.20",
