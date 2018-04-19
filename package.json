@@ -10,7 +10,7 @@
   ],
   "dependencies": {
     "gatsby": "1.9.253",
-    "gatsby-image": "1.0.47"
+    "gatsby-image": "1.0.47",
     "gatsby-link": "1.6.41",
     "gatsby-plugin-canonical-urls": "1.0.18",
     "gatsby-plugin-favicon": "2.1.1",
